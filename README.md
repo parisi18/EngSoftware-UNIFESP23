@@ -8,11 +8,38 @@
 
 ## 3. Aquitetura 
 
+<p>O projeto é composto por várias camadas, desde o frontend até o backend, incluindo uma API e uma rede neural. Abaixo está um diagrama que ilustra a arquitetura do software:</p>
+
+### Diagrama de Arquitetura de Software
+
+ !["Diagrama"](imgs/arquitetura.png)
+
 ### 3.1 Banco de Dados
+
+#### MongoDB
+<p>Descrição: Utilizamos o MongoDB como nosso banco de dados para armazenar informações de forma eficiente e escalável.</p>
+
 
 ### 3.2 Frontend
 
+#### HTML
+<p>Descrição: A interface do usuário é desenvolvida em HTML, proporcionando uma experiência de usuário amigável e interativa.</p>
+
+
 ### 3.3 Backend
+
+#### Flask/Django
+<p>Descrição: O backend é implementado em Python, usando Flask ou Django para gerenciar as requisições e fornecer respostas.</p>
+
+#### API - Flask
+<p>Descrição: Uma API desenvolvida em Flask sera usada para interagir com o modelo.</p>
+
+
+### 3.4 Reconhecimento de Imagens
+
+#### TensorFlow
+
+<p>Descrição: A rede neural sera implementada usando o framework TensorFlow para fornecer o reconhecimento de imagens necessario para esse projeto.</p>
 
 ## 4. Monetização do Aplicativo
 
@@ -33,3 +60,7 @@
 <p> Em resumo, a monetização inteligente e adaptada às diferentes necessidades tanto de clínicas quanto de médicos é essencial para o sucesso e a longevidade deste aplicativo. Ao oferecer opções flexíveis e estratégias que valorizam a qualidade e a confiança, é possível criar um ecossistema financeiramente saudável e benéfico para todas as partes envolvidas.</p>
 
 ## 5. Planejamento
+
+## Testes
+
+## CI/CD
