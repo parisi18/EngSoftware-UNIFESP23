@@ -18,8 +18,11 @@ jobs:
       run: |
         python -m pip cache purge
 
-
-
+    - name: Activate virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
+        
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
