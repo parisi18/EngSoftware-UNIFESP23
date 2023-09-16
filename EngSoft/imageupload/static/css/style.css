@@ -1,0 +1,336 @@
+/*----------------------------- Estilização da tipografia da página -----------------------------*/
+
+/*Define a fonte de título e botões*/
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 120%;
+    font-weight: bold;
+    vertical-align: top;
+    color: #191825;
+}
+
+/*Corpo de textos. No figma seria a tipografia body*/
+body p {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    color: rgba(25, 24, 37, 1);
+}
+
+/*É para definir o título de tabelas ou legendas de imagens*/
+body .caption {}
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*----------------------------- Estilização dos botões da página -----------------------------*/
+
+/*Define esitlo padrao de botoes no geral*/
+button {
+    font-weight: 400;
+    line-height: 120%;
+    font-weight: 500;
+}
+
+button.button-shadow {
+    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08);
+    /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 100px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+/*Define estilo de botoes brancos*/
+button.white-button {
+    color: #5D50C6;
+    background-color: white;
+    border-radius: 100px;
+    border: 0.1px #EEEEEE solid;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+/*Define a dimensão de botões pequenos*/
+button.tiny {
+    font-size: 14px;
+    width: 100px;
+    height: 49px;
+}
+
+/*Define tamanho de botões médios*/
+button.medium {
+    width: 150px;
+    height: 49px;
+}
+
+/*Define tamanho de botões grandes*/
+button.big {
+    width: 500px;
+    height: 49px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*----------------------------- Estilização do cabeçalho da página -----------------------------*/
+
+/*Define a configuracao externa da navbar*/
+.nav-self-config {
+    height: 90px;
+    background-color: transparent !important;
+}
+
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
+@media(min-width:992px) {
+    .nav-self-config {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/*Da o efeito laranja no canto superior da tela*/
+.orange-elipse {
+    /* Ellipse 23 */
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -356px;
+    top: -223px;
+    /* Orange */
+    background: #FF5722;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+/*Cor branca no fundo do menu de itens*/
+.menu-self-config {
+    background-color: white;
+}
+
+/*Espacamento entre itens do menu e sobreposicao dos clicaveis ao grafismo laranja*/
+.menu-self-config li {
+    margin-left: 40px;
+    z-index: 1;
+}
+
+/*Sobreposicao do icone clicaveL ao grafismo laranja*/
+.navbar-brand-self-config {
+    z-index: 1;
+}
+
+.navbar-toggler-self-config {
+    z-index: 1;
+}
+
+.menu-buttons {
+    background-color: white;
+    width: 180px;
+    line-height: 49px;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*Estilizacao do corpo do painel*/
+#painelbody {
+    background-color: #5D50C6;
+    border-radius: 30px;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    padding: 30px;
+    justify-content: center;
+}
+
+/*Estiliza o painel branco dentro da dash roxa*/
+.intern-painel-self-config {
+    background-color: white;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+/*Estiliza o menu dentro da dash roxa*/
+.menu-main-painel-self-config {
+    margin-top: 50px;
+    /*width:250px;*/
+}
+
+.menu-main-painel-self-config p {
+    /*margin: 15 0 0 10; /* topo | direita | inferior | esquerda */
+    margin-left: 10px;
+    margin-top: 5px;
+    line-height: 41px;
+}
+
+/*Estilização das tags p do menu do painel*/
+.menu-main-painel-self-config p {
+    color: white;
+}
+
+/*Estilização das tags a do menu do painel*/
+.menu-main-painel-self-config a {
+    text-decoration: none;
+}
+
+/*Preenche o item do menu que indica qual página foi selecionada*/
+.selected-menu-item-self-config {
+    display: none;
+}
+
+/*Estiliza o texto do menu de config*/
+.selected-menu-item-self-config p {
+    color: #5D50C6;
+}
+
+/*Crio uma divisoria no painel interno de controle*/
+.divider-self-config {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(201, 201, 201, 1);
+}
+
+.logged-user-button {
+    width: 100% !important;
+    font-weight: 600;
+}
+
+/*Estilizo o popup de cadastro*/
+dialog {
+    border: none;
+    border-radius: .5rem;
+    width: 500px;
+}
+
+/*Estilizo o botão que fecha o popup*/
+.close-popup-button {
+    background-color: white;
+    color: #191825;
+    border: none;
+}
+
+/*Defino as tags label como exibicao em block para haver quebra de linha na renderizacao das tags na interface*/
+label {
+    display: block;
+}
+
+/*Faço os inputs terem tamanho total do espaco disponivel na horizontal*/
+input {
+    width: 100%;
+}
+
+/*Removo o padding lateral de cada ficha na lista*/
+.card-list {
+    padding-left: 0px;
+    padding-right: 0px;
+    border: none;
+    font-size: 14px;
+}
+
+/*Estiliza o cabeçalho da lista de cards*/
+.list-header {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(201, 201, 201, 1)
+}
+
+/*Estiliza o formulario de busca*/
+.search-form {
+    background-image: url('../img/search-normal.png');
+    background-size: 20px 20px;
+    background-position: 190px 12px;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    border: 1px solid rgba(201, 201, 201, 1);
+    width: 230px;
+    height: 48px;
+}
+
+/*Estilizo os campos de input do formulário*/
+dialog input {
+    border-color: rgba(201, 201, 201, 1);
+    border-radius: 4px;
+}
+
+/*----------------------------- Media queries de responsividade -----------------------------*/
+
+@media(max-width:720px) {
+    .modify-direction-self-config {
+        flex-direction: column;
+    }
+
+    /*Preenche o item do menu que indica qual página foi selecionada, a partir do breakpoint*/
+    .selected-menu-item-self-config {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: 41px;
+        background-color: #FFFFFF;
+        border-radius: 30px 30px 30px 30px;
+    }
+
+    /*Esconde itens*/
+    .hide-not-visible-selected-menu-item-self-config,
+    .hide-in-mobile {
+        display: none;
+    }
+
+    /*Deixa a lista responsiva*/
+    .responsive-list-items div{
+        margin-left:20px;
+    }
+
+    .reduce-mobile-text span{
+        font-size: 12px !important;
+    }
+    /*Estiliza o formulário de pesquisa*/
+    .search-forms{
+        justify-content: space-between;
+    }
+
+    .search-forms h5{
+        font-size: 16px;
+    }
+
+    .search-forms input{
+        width: 150px;
+        height: 40px;
+    }
+
+    /*Deita o rodapé*/
+    .mobile-make-column {
+        flex-direction: column;
+    }
+
+    .mobile-make-column div {
+        margin-bottom:20px;
+    }
+}
+
+@media(min-width:721px) and (max-width:960px) {
+    #painelbody {
+        padding: 10px;
+    }
+
+    .container-xxl {
+        padding: 0;
+    }
+}
