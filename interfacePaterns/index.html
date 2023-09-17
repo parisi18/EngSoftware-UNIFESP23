@@ -22,11 +22,12 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary nav-self-config">
     <div class="orange-elipse"></div><!--Essa tag traz o efeito do grafismo laranja-->
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand navbar-brand-self-config" href="#">
         <img src="./ubuntu.png" alt="Pinguim" width="30" height="30">
       </a>
-      <button class="navbar-toggler navbar-toggler-self-config" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-self-config" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse menu-self-config" id="navbarSupportedContent">
@@ -44,8 +45,10 @@
             <a class="nav-link active" aria-current="page" href="#">Fale Conosco</a>
           </li>
         </ul>
-        <button type="button" class="tiny white-button" style="color:#222831; border: none;">Log In</button>
-        <button type="button" class="tiny purple-button">Sign Up</button>
+        <div class="menu-buttons">
+          <button type="button" class="tiny white-button" style="color:#222831; border: none;" onclick="window.location.href='#'">Log In</button>
+          <button type="button" class="tiny purple-button" onclick="window.location.href='#'">Sign Up</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -68,10 +71,10 @@
   <!-- Corpo do Texto -->
   <p>ppppppppppp<br>ppppppppppp</p>
   <br>
-  <button type="button" class="tiny purple-button button-shadow">Calma ae</button><br><br><br>
-  <button type="button" class="medium purple-button button-shadow">Calma ae</button><br><br><br>
-  <button type="button" class="medium white-button">Calma ae</button><br><br><br>
-  <button type="button" class="big purple-button button-shadow">Calma ae</button>
+  <button type="button" class="tiny purple-button button-shadow" onclick="window.location.href='#'">Calma ae</button><br><br><br>
+  <button type="button" class="medium purple-button button-shadow" onclick="window.location.href='#'">Calma ae</button><br><br><br>
+  <button type="button" class="medium white-button" onclick="window.location.href='#'">Calma ae</button><br><br><br>
+  <button type="button" class="big purple-button button-shadow" onclick="window.location.href='#'">Calma ae</button>
   <br><br><br>
   <caption>caption<br>caption</caption>
 
@@ -87,4 +90,5 @@
     crossorigin="anonymous"></script>
   <!-- JavaScript para impedir que o menu dropdown seja fechado -->
 </body>
+
 </html>
