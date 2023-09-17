@@ -21,20 +21,20 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 
 /*Da o efeito laranja no canto superior da tela*/
 .orange-elipse {
-     /* Ellipse 23 */
-     position: absolute;
-     width: 500px;
-     height: 500px;
-     left: -356px;
-     top: -223px;
-     /* Orange */
-     background: #FF5722;
-     opacity: 0.5;
-     filter: blur(250px);
+    /* Ellipse 23 */
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -356px;
+    top: -223px;
+    /* Orange */
+    background: #FF5722;
+    opacity: 0.5;
+    filter: blur(250px);
 }
 
 /*Cor branca no fundo do menu de itens*/
-.menu-self-config{
+.menu-self-config {
     background-color: white;
 }
 
@@ -42,4 +42,17 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 .menu-self-config li {
     margin-left: 40px;
     z-index: 1;
+}
+
+/*Sobreposicao do icone clicaveL ao grafismo laranja*/
+.navbar-brand-self-config {
+    z-index: 1;
+}
+
+.navbar-toggler-self-config {
+    z-index: 1;
+}
+
+.menu-buttons {
+    background-color: white;
 }

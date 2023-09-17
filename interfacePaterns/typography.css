@@ -9,12 +9,14 @@ h6 {
     line-height: 120%;
     font-weight: bold;
     vertical-align: top;
+    color: #191825;
 }
 
 /*Corpo de textos. No figma seria a tipografia body*/
 body p {
     font-family: 'Inter', sans-serif;
     line-height: 160%;
+    color:rgba(25, 24, 37, 1);
 }
 
 /*É para definir o título de tabelas ou legendas de imagens*/
