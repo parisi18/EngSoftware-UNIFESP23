@@ -1,0 +1,21 @@
+/*Define a fonte de título e botões*/
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 120%;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/*Corpo de textos. No figma seria a tipografia body*/
+body p {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+
+/*É para definir o título de tabelas ou legendas de imagens*/
+body .caption {}

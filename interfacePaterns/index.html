@@ -1,79 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <!--Responsive view meta-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Esse link puxa por cdn arquivos css do bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link href="./index.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+  <meta charset="UTF-8">
+  <!--Responsive view meta-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Esse link puxa por cdn arquivos css do bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="./header.css" rel="stylesheet">
+  <link href="./buttons.css" rel="stylesheet">
+  <link href="./typography.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
 
-    <title>Live Server</title>
+  <title>Live Server</title>
 </head>
+
 <body>
-    <!-- Menu de Navegação -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary nav-self-config">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="./ubuntu.png" alt="Pinguim" width="30" height="30">
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Sobre Nós</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Planos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Fale Conosco</a>
-            </li>
-            </ul>
-          </div>
-          <button type="button" class="tiny white-button" style="color:#222831; border: none;">Log In</button>
-          <button type="button" class="tiny purple-button">Sign Up</button>
-        </div>
-      </nav>
+  <!-- Menu de Navegação -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary nav-self-config">
+    <div class="orange-elipse"></div><!--Essa tag traz o efeito do grafismo laranja-->
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="./ubuntu.png" alt="Pinguim" width="30" height="30">
+      </a>
+      <button class="navbar-toggler navbar-toggler-self-config" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse menu-self-config" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Sobre Nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Planos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Fale Conosco</a>
+          </li>
+        </ul>
+        <button type="button" class="tiny white-button" style="color:#222831; border: none;">Log In</button>
+        <button type="button" class="tiny purple-button">Sign Up</button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Títulos -->
-    <h1>H1H1H1H1H1<br>H1H1H1H1H1</h1>
-    <br>
-    <h2>H2H2H2H2H2<br>H2H2H2H2H2</h2>
-    <br>
-    <h3>H3H3H3H3H3<br>H3H3H3H3H3</h3>
-    <br>
-    <h4>H4H4H4H4H4<br>H4H4H4H4H4</h4>
-    <br>
-    <h5>H5H5H5H5H5<br>H5H5H5H5H5</h5>
-    <br>
-    <h6>H6H6H6H6H6<br>H6H6H6H6H6</h6>
-    <br>
 
-    <!-- Corpo do Texto -->
-    <p>ppppppppppp<br>ppppppppppp</p>
-    <br>
-    <button type="button" class="tiny purple-button button-shadow">Calma ae</button><br><br><br>
-    <button type="button" class="medium purple-button button-shadow">Calma ae</button><br><br><br>
-    <button type="button" class="medium white-button">Calma ae</button><br><br><br>
-    <button type="button" class="big purple-button button-shadow">Calma ae</button>
-    <br><br><br>
-    <caption>caption<br>caption</caption>
+  <!-- Títulos -->
+  <h1>H1H1H1H1H1<br>H1H1H1H1H1</h1>
+  <br>
+  <h2>H2H2H2H2H2<br>H2H2H2H2H2</h2>
+  <br>
+  <h3>H3H3H3H3H3<br>H3H3H3H3H3</h3>
+  <br>
+  <h4>H4H4H4H4H4<br>H4H4H4H4H4</h4>
+  <br>
+  <h5>H5H5H5H5H5<br>H5H5H5H5H5</h5>
+  <br>
+  <h6>H6H6H6H6H6<br>H6H6H6H6H6</h6>
+  <br>
 
-    <!--Ainda nao entendi o que sao poppovers, mas tem haver com dimensionamento
+  <!-- Corpo do Texto -->
+  <p>ppppppppppp<br>ppppppppppp</p>
+  <br>
+  <button type="button" class="tiny purple-button button-shadow">Calma ae</button><br><br><br>
+  <button type="button" class="medium purple-button button-shadow">Calma ae</button><br><br><br>
+  <button type="button" class="medium white-button">Calma ae</button><br><br><br>
+  <button type="button" class="big purple-button button-shadow">Calma ae</button>
+  <br><br><br>
+  <caption>caption<br>caption</caption>
+
+  <!--Ainda nao entendi o que sao poppovers, mas tem haver com dimensionamento
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     
     => Dropdowns requerem poppovers
     -->
-    <!--Esse link puxa por cdn arquivos js da bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <!-- JavaScript para impedir que o menu dropdown seja fechado -->
+
+  <!--Esse link puxa por cdn arquivos js da bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- JavaScript para impedir que o menu dropdown seja fechado -->
 </body>
 </html>
