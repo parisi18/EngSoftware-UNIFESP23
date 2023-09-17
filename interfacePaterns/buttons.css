@@ -31,11 +31,6 @@ button.white-button {
     transition: border-color 0.3s, background-color 0.3s; /* Adiciona uma transição suave para a cor da borda */
 }
 
-button.purple-button:hover {
-    background-color: #7d70e6;
-    color: white;
-}
-
 /*Define a dimensão de botões pequenos*/
 button.tiny {
     font-size: 14px;
