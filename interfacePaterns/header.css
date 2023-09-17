@@ -11,6 +11,7 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
     background-color: transparent !important;
 }
 
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
 @media(min-width:992px) {
     .nav-self-config {
         padding-left: 100px;
@@ -19,7 +20,7 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
 }
 
 /*Da o efeito laranja no canto superior da tela*/
-.orange-elipse{
+.orange-elipse {
      /* Ellipse 23 */
      position: absolute;
      width: 500px;
