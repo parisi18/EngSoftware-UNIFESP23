@@ -12,6 +12,9 @@ jobs:
       max-parallel: 4
       matrix:
         python-version: [3.9]
+    
+    env:
+      DJANGO_PROJECT_PATH: "../EngSoft/"
 
     steps:
     - name: Clear caches
@@ -34,7 +37,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Tests
+    - name: Run Django tests
+      working-directory: ${{ env.DJANGO_PROJECT_PATH }}
       run: |
         python manage.py test
 
