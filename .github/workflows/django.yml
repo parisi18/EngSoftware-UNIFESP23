@@ -14,7 +14,7 @@ jobs:
         python-version: [3.9]
     
     env:
-      DJANGO_PROJECT_PATH: "../EngSoft/"
+      DJANGO_PROJECT_PATH: "./EngSoft/"
 
     steps:
     - name: Clear caches
