@@ -54,9 +54,9 @@ jobs:
           ls -l  # List the contents of the current directory to verify venv creation
 
           echo "Contents of ./:"
-          ls -l  ./# List the contents of the current directory to verify venv creation
+          ls -l  ./ #List the contents of the current directory to verify venv creation
           
-          echo "Contents of ./venv"
+          echo "Contents of ./venv:"
           ls -l ./venv
 
           echo "Contents of venv:"
