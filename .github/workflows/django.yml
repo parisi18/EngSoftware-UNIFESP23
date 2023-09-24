@@ -40,6 +40,11 @@ jobs:
     needs: build  # This ensures that the "test" job depends on the completion of the "build" job
       
     steps:
+      - name: Clean build environment
+        run: |
+          deactivate  # Deactivate the existing virtual environment
+          rm -rf venv  # Remove the virtual environment directory
+
       - name: Checkout code
         uses: actions/checkout@v2
       
