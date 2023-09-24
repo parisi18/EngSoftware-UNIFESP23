@@ -48,6 +48,7 @@ jobs:
 
     - name: Activate virtual environment
       run: |
+        python -m venv venv
         source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
 
     - name: Run Django tests
