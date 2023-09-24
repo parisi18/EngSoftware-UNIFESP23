@@ -52,6 +52,13 @@ jobs:
       - name: Activate virtual environment
         run: |
           ls -l  # List the contents of the current directory to verify venv creation
+
+          echo "Contents of ./:"
+          ls -l  ./# List the contents of the current directory to verify venv creation
+          
+          echo "Contents of ./venv"
+          ls -l ./venv
+
           echo "Contents of venv:"
           ls -l venv  # List the contents of the venv directory
           source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
