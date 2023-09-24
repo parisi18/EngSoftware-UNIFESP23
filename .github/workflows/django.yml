@@ -32,9 +32,6 @@ jobs:
       run: |
         python -m venv venv
         source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
-
-    - name: Install Dependencies
-      run: |
         pip install --upgrade pip
         pip install -r requirements.txt
 
@@ -48,7 +45,6 @@ jobs:
 
     - name: Activate virtual environment
       run: |
-        python -m venv venv
         source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
 
     - name: Run Django tests
