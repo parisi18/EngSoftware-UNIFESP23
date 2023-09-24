@@ -32,6 +32,9 @@ jobs:
       run: |
         flake8 .
 
+    - name: Check DJANGO_PROJECT_PATH
+      run: echo $DJANGO_PROJECT_PATH
+
     - name: Run Tests
       working-directory: ${{ env.DJANGO_PROJECT_PATH }}
       run: |
