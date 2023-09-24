@@ -15,8 +15,6 @@ jobs:
       matrix:
         python-version: [3.9]
 
-
-
     steps:
     - name: Clear caches
       run: |
@@ -44,6 +42,11 @@ jobs:
     needs: build  # This ensures that the "test" job depends on the completion of the "build" job
 
     steps:
+    - name: Activate virtual environment
+      run: |
+        python -m venv venv
+        source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
+
     - name: Checkout code
       uses: actions/checkout@v3
 
