@@ -33,7 +33,5 @@ jobs:
         flake8 .
 
     - name: Run Tests
-      working-directory: ${{ env.DJANGO_PROJECT_PATH }}
       run: |
-        cd ${{ env.DJANGO_PROJECT_PATH }}
         python manage.py test
