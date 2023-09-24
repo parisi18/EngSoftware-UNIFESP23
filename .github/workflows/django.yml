@@ -5,11 +5,10 @@ on:
   pull_request:
 
 env:
-  DJANGO_PROJECT_PATH: "."
+  DJANGO_PROJECT_PATH: "EngSoft/"  # Update to the project directory
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
