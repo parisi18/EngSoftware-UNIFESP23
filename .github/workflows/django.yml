@@ -31,10 +31,15 @@ jobs:
     - name: Create and activate virtual environment
       run: |
         python -m venv venv
-        ls -l  # List the contents of the current directory to verify venv creation
-        source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
-        pip install --upgrade pip
-        pip install -r requirements.txt
+        if [ $? -eq 0 ]; then
+          ls -l  # List the contents of the current directory to verify venv creation
+          source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
+          pip install --upgrade pip
+          pip install -r requirements.txt
+        else
+          echo "Error: Failed to create virtual environment."
+          exit 1
+        fi
 
   test:
     runs-on: ubuntu-latest
@@ -46,7 +51,6 @@ jobs:
         
       - name: Activate virtual environment
         run: |
-          ls -l venv  # List the contents of the venv directory to verify its existence
           source venv/bin/activate  # On Windows, you can use "venv\Scripts\activate"
       
       - name: Run Django tests
