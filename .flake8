@@ -1,0 +1,10 @@
+[flake8]
+
+# Tamanho maximo de linha codificada
+max-line-length = 100
+
+# Ignorando duas configurações
+# E231 missing whitespace after ','
+# E302 expected 2 blank lines, found 1
+# W292 no newline at end of file
+ignore = E231,E302,W292
