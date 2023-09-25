@@ -5,3 +5,16 @@ software like Google Maps and Google Custom Search Engine.
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 */
 
+/*Define a configuracao externa da navbar*/
+.nav-self-config {
+    height: 90px;
+    background-color: transparent !important;
+}
+
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
+@media(min-width:992px) {
+    .nav-self-config {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
