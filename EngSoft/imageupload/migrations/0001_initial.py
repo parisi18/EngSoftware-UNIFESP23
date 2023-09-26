@@ -20,7 +20,8 @@ class Migration(migrations.Migration):
                  editable=False, primary_key=True, serialize=False)),
                 ('animal_profile_image', models.ImageField(
                     upload_to='animal_profile_image/', verbose_name='Animal profile image')),
-                ('animal_images', models.ImageField(upload_to='animal_image/', verbose_name='Animal images')),
+                ('animal_images', models.ImageField(
+                    upload_to='animal_image/', verbose_name='Animal images')),
                 ('diagnosed_images', models.IntegerField(verbose_name='Diangosed images')),
                 ('verified_images', models.IntegerField(verbose_name='Verified images')),
                 ('owner_name', models.CharField(max_length=50, verbose_name='Owner name')),

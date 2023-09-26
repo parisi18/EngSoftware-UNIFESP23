@@ -21,8 +21,8 @@ class MultipleFileField(forms.FileField):
 
 
 class CardForm(forms.ModelForm):
-    # instancio um campo de multiplos arquivos.Usamos o atributo 
-    # widget=forms.ClearableFileInput(attrs={'multiple': True}) 
+    # instancio um campo de multiplos arquivos.Usamos o atributo
+    # widget=forms.ClearableFileInput(attrs={'multiple': True})
     # para permitir a selecao multipla de arquivos
     animal_images = MultipleFileField(widget=MultipleFileInput(
         attrs={'multiple': True, 'id': 'id_animal_images'}))

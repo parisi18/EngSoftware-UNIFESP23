@@ -15,7 +15,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True,
                  primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to='imageupload/animalimages', verbose_name='Animal image')),
+                ('image', models.ImageField(upload_to='imageupload/animalimages',
+                                            verbose_name='Animal image')),
             ],
         ),
         migrations.RemoveField(

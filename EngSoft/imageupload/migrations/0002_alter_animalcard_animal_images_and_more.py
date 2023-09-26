@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
             model_name='animalcard',
             name='animal_profile_image',
             field=models.ImageField(
-                upload_to='imageupload/static/animal_profile_image/', verbose_name='Animal profile image'),
+                upload_to='imageupload/static/animal_profile_image/',
+                verbose_name='Animal profile image'),
         ),
     ]
