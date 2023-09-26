@@ -13,11 +13,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='animalcard',
             name='animal_images',
-            field=models.ImageField(upload_to='imageupload/static/animal_image/', verbose_name='Animal images'),
+            field=models.ImageField(upload_to='imageupload/static/animal_image/',
+                                    verbose_name='Animal images'),
         ),
         migrations.AlterField(
             model_name='animalcard',
             name='animal_profile_image',
-            field=models.ImageField(upload_to='imageupload/static/animal_profile_image/', verbose_name='Animal profile image'),
+            field=models.ImageField(
+                upload_to='imageupload/static/animal_profile_image/', verbose_name='Animal profile image'),
         ),
     ]

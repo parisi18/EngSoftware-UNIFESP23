@@ -1,6 +1,5 @@
 from django import forms
 from .models import AnimalCard
-from django.core.files.uploadedfile import InMemoryUploadedFile
 
 # como django nao possui um campo de multiplos arquivos, precisamos definir um manualmente
 class MultipleFileInput(forms.ClearableFileInput):
@@ -22,8 +21,11 @@ class MultipleFileField(forms.FileField):
 
 
 class CardForm(forms.ModelForm):
-    # instancio um campo de multiplos arquivos.Usamos o atributo widget=forms.ClearableFileInput(attrs={'multiple': True}) para permitir a selecao multipla de arquivos
-    animal_images = MultipleFileField(widget=MultipleFileInput(attrs={'multiple': True, 'id': 'id_animal_images'}))
+    # instancio um campo de multiplos arquivos.Usamos o atributo 
+    # widget=forms.ClearableFileInput(attrs={'multiple': True}) 
+    # para permitir a selecao multipla de arquivos
+    animal_images = MultipleFileField(widget=MultipleFileInput(
+        attrs={'multiple': True, 'id': 'id_animal_images'}))
 
     class Meta:
         model = AnimalCard

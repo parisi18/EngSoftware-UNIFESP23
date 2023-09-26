@@ -13,7 +13,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='AnimalImage',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('image', models.ImageField(upload_to='imageupload/animalimages', verbose_name='Animal image')),
             ],
         ),
@@ -24,7 +25,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='animalcard',
             name='animal_profile_image',
-            field=models.ImageField(upload_to='imageupload/animalprofilepic', verbose_name='Animal profile image'),
+            field=models.ImageField(upload_to='imageupload/animalprofilepic',
+                                    verbose_name='Animal profile image'),
         ),
         migrations.AddField(
             model_name='animalcard',

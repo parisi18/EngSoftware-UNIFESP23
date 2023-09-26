@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CardForm
 from .models import AnimalCard, AnimalImage
-from django.views.generic.edit import FormView
 from django.core.paginator import Paginator  # lida com paginacao no template
 # operador que lida com consultas complexas em vários campos do modelo
 from django.db.models import Q
@@ -34,11 +33,8 @@ def process_search(request):
 
     if request.method == 'GET' and search_term != '':
         # Prepara os campos de consulta
-        filtered_cards = AnimalCard.objects.filter(
-            Q(animal_name__icontains=search_term) |
-            Q(owner_name__icontains=search_term) |
-            Q(owner_address__icontains=search_term)
-        )
+        filtered_cards = AnimalCard.objects.filter(Q(animal_name__icontains=search_term) | Q(
+            owner_name__icontains=search_term) | Q(owner_address__icontains=search_term))
 
         form = CardForm()
 
@@ -51,7 +47,8 @@ def process_search(request):
 # view que processa um novo registro no formulário
 def process_forms(request):
     if request.method == 'POST':
-        # request.POST contém dados como texto do formulário | request.FILES contém dados como arquivos
+        # request.POST contém dados como texto do formulário
+        # request.FILES contém dados como arquivos
         form = CardForm(request.POST, request.FILES)
         if form.is_valid():
             card = form.save(commit=False)
@@ -69,13 +66,15 @@ def process_forms(request):
     return redirect('animalcard')
 
 
-# Recebe uma requisicao HTTP (GET) para processar junto com o id do animal, o processamento é a remoção do card no banco de dados
+# Recebe uma requisicao HTTP (GET) para processar junto com o id do animal
+# o processamento é a remoção do card no banco de dados
 def delete_card(request, animal_id):
     animal = AnimalCard.objects.get(pk=animal_id)
     animal.delete()
     return redirect('animalcard')
 
-# Recebe uma requisicao HTTP (POST) para processar junto com o id do animal, o processamento é a edição de campos do card no banco de dados
+# Recebe uma requisicao HTTP (POST) para processar junto com o id do animal
+# o processamento é a edição de campos do card no banco de dados
 def edit_card(request, animal_id):
     animal_card = AnimalCard.objects.get(pk=animal_id)
     print(animal_id)

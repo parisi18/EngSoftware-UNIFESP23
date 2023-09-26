@@ -18,7 +18,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='animalcard',
             name='animal_profile_image',
-            field=models.ImageField(upload_to='imageupload/media', verbose_name='Animal profile image'),
+            field=models.ImageField(upload_to='imageupload/media',
+                                    verbose_name='Animal profile image'),
         ),
         migrations.AlterField(
             model_name='animalcard',
