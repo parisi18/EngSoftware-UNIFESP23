@@ -14,18 +14,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+
+from django.urls import path
+from .views import animal_card, delete_card, edit_card, process_forms, process_search
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path('animais/', include('imageupload.urls'), name='animals'),
-    path('', include('home.urls'), name='home'),
-    path('sobrenos/', include('aboutus.urls'), name='aboutus'),
+    path('', animal_card, name='animalcard'),
+    path('deletecard/<uuid:animal_id>/', delete_card, name='deletecard'),
+    path('editcard/<uuid:animal_id>/', edit_card, name='editcard'),
+    path('processforms/', process_forms, name='processforms'),
+    path('processearch/', process_search, name='processearch'),
 ]
-
-# essa configuracao permite o django servir imagens de mídia durante o desenvolvimento
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
