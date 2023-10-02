@@ -125,3 +125,10 @@ MEDIA_URL = 'media/'
 
 # Define a url para imagens que forem upadas via browser (em producao)
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Mailchimp credentials
+
+Mailchimp_API_KEY = "9e8bd99991e5a681ed08e7f4cabac0fe-us9"
+Mailchimp_DATACENTER = 'us9'
+Mailchimp_LIST_ID = "2ef64b1f28"
+
