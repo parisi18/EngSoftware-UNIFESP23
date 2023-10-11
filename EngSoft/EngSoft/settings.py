@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "imageupload",
     "home",
     "aboutus",
+    "newsletter",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -92,9 +94,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
@@ -128,7 +136,7 @@ MEDIA_URL = 'media/'
 
 # Mailchimp credentials
 
-Mailchimp_API_KEY = "9e8bd99991e5a681ed08e7f4cabac0fe-us9"
-Mailchimp_DATACENTER = 'us9'
-Mailchimp_LIST_ID = "2ef64b1f28"
+MAILCHIMP_API_KEY  = "9e8bd99991e5a681ed08e7f4cabac0fe-us9"
+MAILCHIMP_DATA_CENTER = 'us9'
+MAILCHIMP_LIST_ID = "2ef64b1f28"
 
