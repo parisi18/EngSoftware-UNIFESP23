@@ -7,4 +7,4 @@ max-line-length = 100
 # E231 missing whitespace after ','
 # E302 expected 2 blank lines, found 1
 # W292 no newline at end of file
-ignore = E231,E302,W292
+ignore = E231,E302,W292,W391,
