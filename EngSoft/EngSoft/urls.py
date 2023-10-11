@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from newsletter.views import MailSubscriptionAPIView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('animais/', include('imageupload.urls'), name='animals'),
     path('', include('home.urls'), name='home'),
     path('sobrenos/', include('aboutus.urls'), name='aboutus'),
+    path('subscribe_email', MailSubscriptionAPIView.as_view(), name='subscribe-email'),
 ]
 
 # essa configuracao permite o django servir imagens de mídia durante o desenvolvimento
