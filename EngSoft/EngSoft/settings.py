@@ -136,7 +136,7 @@ MEDIA_URL = 'media/'
 
 # Mailchimp credentials
 
-MAILCHIMP_API_KEY  = "9e8bd99991e5a681ed08e7f4cabac0fe-us9"
+MAILCHIMP_API_KEY = "9e8bd99991e5a681ed08e7f4cabac0fe-us9"
 MAILCHIMP_DATA_CENTER = 'us9'
 MAILCHIMP_LIST_ID = "2ef64b1f28"
 

@@ -33,8 +33,8 @@ class MailSubscriptionAPIView(GenericAPIView):
         email = request.data['email']
         MailSubscriptionAPIView.subscribe_email(email)
         return Response({
-                "status_code": status.HTTP_200_OK,
-                "message": "Mail added to mailchimp"
+            "status_code": status.HTTP_200_OK,
+            "message": "Mail added to mailchimp"
         })
     
     def get(self, request, *args, **kwargs):
