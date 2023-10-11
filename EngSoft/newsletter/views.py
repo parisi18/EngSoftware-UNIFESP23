@@ -1,17 +1,10 @@
 from rest_framework.renderers import TemplateHTMLRenderer
-
 from rest_framework import status
 from mailchimp_marketing import Client
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 from mailchimp_marketing.api_client import ApiClientError
-from EngSoft.settings import (
-                                            MAILCHIMP_API_KEY,
-                                            MAILCHIMP_DATA_CENTER,
-                                            MAILCHIMP_LIST_ID,
-                                            )
-
-
+from EngSoft.settings import (MAILCHIMP_API_KEY, MAILCHIMP_DATA_CENTER, MAILCHIMP_LIST_ID)
 
 class MailSubscriptionAPIView(GenericAPIView):
     renderer_classes = [TemplateHTMLRenderer]
@@ -42,7 +35,7 @@ class MailSubscriptionAPIView(GenericAPIView):
         return Response({
                 "status_code": status.HTTP_200_OK,
                 "message": "Mail added to mailchimp"
-            })
+        })
     
     def get(self, request, *args, **kwargs):
         # Handle GET requests here
