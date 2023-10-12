@@ -35,6 +35,6 @@ class MailSubscriptionAPIView(GenericAPIView):
         email = serializer.validated_data['email']
         self.subscribe_email(email)
         return Response({
-                "status_code": status.HTTP_200_OK,
-                "message": "Mail added to mailchimp"
-            })
+            "status_code": status.HTTP_200_OK,
+            "message": "Mail added to mailchimp"
+        })
