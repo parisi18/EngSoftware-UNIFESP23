@@ -1,16 +1,16 @@
-from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework import status
 from mailchimp_marketing import Client
 from rest_framework.response import Response
 from rest_framework.generics import GenericAPIView
 from mailchimp_marketing.api_client import ApiClientError
 from EngSoft.settings import (MAILCHIMP_API_KEY, MAILCHIMP_DATA_CENTER, MAILCHIMP_LIST_ID)
+from newsletter.serializer import EmailSubscriptionSerializer  # Import the serializer
 
 class MailSubscriptionAPIView(GenericAPIView):
-    renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'rest_framework/api.html'
 
-    def subscribe_email(email):
+    serializer_class = EmailSubscriptionSerializer
+
+    def subscribe_email(self, email):
         """
         This function will communicate with mailchimp api
         to create a member in an audience list
@@ -30,14 +30,11 @@ class MailSubscriptionAPIView(GenericAPIView):
             print(error.text)
 
     def post(self, request, *args, **kwargs):
-        email = request.data['email']
-        MailSubscriptionAPIView.subscribe_email(email)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        email = serializer.validated_data['email']
+        self.subscribe_email(email)
         return Response({
-            "status_code": status.HTTP_200_OK,
-            "message": "Mail added to mailchimp"
-        })
-    
-    def get(self, request, *args, **kwargs):
-        # Handle GET requests here
-        # You may want to render a form or a page for GET requests
-        return Response({})
+                "status_code": status.HTTP_200_OK,
+                "message": "Mail added to mailchimp"
+            })
