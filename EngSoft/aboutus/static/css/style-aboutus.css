@@ -25,6 +25,22 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
     filter: blur(250px);
 }
 
+/* .yellow-elipse {
+    /* Ellipse 24 */
+
+    /* position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 1351px;
+    top: 847px;
+
+    /* Yellow */
+    /* background: #FACD49;
+    opacity: 0.5;
+    filter: blur(250px);
+
+} */
+
 /*Cor branca no fundo do menu de itens*/
 .menu-self-config {
     background-color: white;
