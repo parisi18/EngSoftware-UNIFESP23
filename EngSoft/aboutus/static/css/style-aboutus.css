@@ -5,6 +5,12 @@ software like Google Maps and Google Custom Search Engine.
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 */
 
+/*Limpo todas as estilizações padrão de links*/
+a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
 /*Define a configuracao externa da navbar*/
 .nav-self-config {
     height: 90px;

@@ -1,3 +1,9 @@
+/*Limpo todas as estilizações padrão de links*/
+a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
 /*----------------------------- Estilização da tipografia da página -----------------------------*/
 
 /*Define a fonte de título e botões*/
