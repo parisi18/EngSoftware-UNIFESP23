@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "imageupload",
     "home",
     "aboutus",
+    "newsletter",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -92,9 +94,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
@@ -125,3 +133,10 @@ MEDIA_URL = 'media/'
 
 # Define a url para imagens que forem upadas via browser (em producao)
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Mailchimp credentials
+
+MAILCHIMP_API_KEY = "26d724297d3435f083eb3d3586421b27-us21"
+MAILCHIMP_DATA_CENTER = 'us21'
+MAILCHIMP_LIST_ID = "8d31bf3aee"
+
