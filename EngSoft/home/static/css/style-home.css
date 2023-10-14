@@ -10,6 +10,12 @@ body {
     overflow-x: hidden;
 } */
 
+.main-section-image {
+    width: 100%;
+    max-width:100%;
+    object-fit: cover;
+}
+
 /*Limpo todas as estilizações padrão de links*/
 a {
     text-decoration: none;
@@ -184,7 +190,7 @@ button.big {
     height: 60px;
     width: 50%;
     margin-right: 30px;
-    padding-left:40px;
+    padding-left: 40px;
 }
 
 .news-middle-col button {

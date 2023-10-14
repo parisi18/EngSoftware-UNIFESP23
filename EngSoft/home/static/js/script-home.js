@@ -1,7 +1,8 @@
 // Formata o email para o app de newsletter fazer o envio para a mailchimp
 function sendEmail() {
     var email = document.getElementById("email").value;
-    var subscribeEmailUrl = emailInput.getAttribute('data-subscribe-email-url');
+    var subscribeEmailUrl = 'api/subscribe_email'
+    var csrfToken = document.querySelector('input[name=csrfmiddlewaretoken]').value;
 
     alert("email:" + email)
 
@@ -11,8 +12,8 @@ function sendEmail() {
     // Abre a solicitação POST para a URL definida
     xhr.open('POST', subscribeEmailUrl, true);
 
-    // Define o cabeçalho X-CSRFToken para o token CSRF (substitua pelo valor real)
-    xhr.setRequestHeader('X-CSRFToken', csrf_token);
+    // Define o cabeçalho X-CSRFToken para o token CSRF
+    xhr.setRequestHeader('X-CSRFToken', csrfToken);
 
     // Define uma função a ser chamada quando a solicitação for concluída
     xhr.onreadystatechange = function () {
