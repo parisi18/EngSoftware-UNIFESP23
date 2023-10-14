@@ -184,6 +184,7 @@ button.big {
     height: 60px;
     width: 50%;
     margin-right: 30px;
+    padding-left:40px;
 }
 
 .news-middle-col button {

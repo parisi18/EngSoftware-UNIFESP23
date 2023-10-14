@@ -427,9 +427,9 @@
         <p class="pink-title">Inscreva-se na nossa newsletter</p>
         <h1>Descubra o futuro dos cuidados veterinários com IA</h1>
         <form class="w-100 mt-3 d-flex flex-column flex-md-row justify-content-md-center align-items-center"
-          id="newsletter-form" onsubmit="enviarEmail(); return false;">
+          id="newsletter-form" data-subscribe-email-url="subscribe-email" onsubmit="sendEmail(); return false;">
           <input class="mb-4 mb-md-0 news-input" type="email" id="email">
-          <button type="button" class="news-button purple-button">Se inscrever</button>
+          <button type="submit" class="news-button purple-button">Se inscrever</button>
         </form>
       </div>
       <div class="col-1 align-self-center hide-mobile-element">
