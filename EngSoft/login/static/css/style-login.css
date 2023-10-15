@@ -80,7 +80,7 @@ a {
     justify-content: center;
     width: 700px;
     /* offset-x offset-y dispersão cor*/
-    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2), -2px 30px 10px rgba(0, 0, 0, 0.1);
     border-radius: 32px;
     padding: 20px;
 }
@@ -91,19 +91,24 @@ a {
 
 #full-name-input,
 #email-address-input,
-#password-input {
+#password-input,
+#new-password-input,
+#new-password-input-confirmation {
     border-top: none;
     border-left: none;
     border-right: none;
     margin-top: 10px;
     margin-bottom: 15px;
     border-bottom: 1px solid #CFCDCD;
+    width:100%;
 }
 
 /*A pseudoclasse focus lida com o elemento quando ele está sendo focado*/
 #full-name-input:focus,
 #email-address-input:focus,
-#password-input:focus {
+#password-input:focus,
+#new-password-input:focus,
+#new-password-input-confirmation:focus {
     outline: none;
 }
 
@@ -153,8 +158,58 @@ a {
     font-style: italic;
 }
 
-.footer-text, .footer-text a {
+.footer-text,
+.footer-text a {
     color: rgba(25, 24, 37, 0.5);
+}
+
+#login-card-fp {
+    height: 310px;
+    margin: 100px 0px;
+}
+
+#login-card-fp main {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    /* offset-x offset-y dispersão cor*/
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2), -2px 30px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    padding: 20px;
+}
+
+#login-card-np {
+    height: 450px;
+    margin: 100px 0px;
+}
+
+#login-card-np main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    /* offset-x offset-y dispersão cor*/
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2), -2px 30px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 32px;
+    padding: 20px;
+}
+
+.password-button {
+    width: 20px;
+    height: 20px;
+    /* left: 67%;
+    top: 88%;
+    transform: translateY(-67%,-88%);
+    position: absolute; */
+}
+
+.new-password-button {
+    width: 20px;
+    height: 20px;
+    /* left: 67%;
+    top: 56%;
+    transform: translateY(-67%, -88%);
+    position: absolute; */
 }
 
 @media (max-width: 576px) {
@@ -170,7 +225,8 @@ a {
         width: 250px;
     }
 
-    .facebook-account-button, .google-account-button {
+    .facebook-account-button,
+    .google-account-button {
         width: 100%;
     }
 
@@ -179,7 +235,7 @@ a {
     }
 
     .login-button {
-        max-width:100%;
+        max-width: 100%;
     }
 }
 
@@ -192,7 +248,8 @@ a {
         width: 400px;
     }
 
-    .facebook-account-button, .google-account-button {
+    .facebook-account-button,
+    .google-account-button {
         width: 100%;
     }
 
@@ -201,6 +258,6 @@ a {
     }
 
     .login-button {
-        max-width:100%;
+        max-width: 100%;
     }
 }
