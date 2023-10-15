@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-# import os
+from decouple import Config, RepositoryEnv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "aboutus",
     "newsletter",
     "rest_framework",
+    "login",
 ]
 
 MIDDLEWARE = [
@@ -136,6 +137,8 @@ MEDIA_URL = 'media/'
 
 # Mailchimp credentials
 
-MAILCHIMP_API_KEY = "f3b8802091ec58be95a61f8a34bae8c7-us21"
-MAILCHIMP_DATA_CENTER = 'us21'
-MAILCHIMP_LIST_ID = "8d31bf3aee"
+config = Config(RepositoryEnv('./.env'))
+
+MAILCHIMP_API_KEY = config('MP_API_KEY')
+MAILCHIMP_DATA_CENTER = config('MP_DATA_CENTER')
+MAILCHIMP_LIST_ID = config('MP_LIST_ID')
