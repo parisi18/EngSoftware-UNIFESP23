@@ -1,0 +1,206 @@
+/*Define esitlo padrao de botoes no geral*/
+button {
+    font-weight: 400;
+    line-height: 120%;
+}
+
+button.button-shadow {
+    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08);
+    /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 100px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+/*Define estilo de botoes brancos*/
+button.white-button {
+    color: #5D50C6;
+    background-color: white;
+    border-radius: 100px;
+    border: 0.1px #EEEEEE solid;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+/*Define a dimensão de botões pequenos*/
+button.tiny {
+    font-size: 14px;
+    width: 100px;
+    height: 49px;
+}
+
+/*Define tamanho de botões médios*/
+button.medium {
+    width: 150px;
+    height: 49px;
+}
+
+/*Define tamanho de botões grandes*/
+button.big {
+    width: 500px;
+    height: 49px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#navbar {
+    height: 100px;
+    width: 100%;
+    background-color: white;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 10px solid #FF5722;
+}
+
+#login-card {
+    height: 600px;
+    margin: 100px 0px;
+}
+
+#login-card main {
+    display: flex;
+    justify-content: center;
+    width: 700px;
+    /* offset-x offset-y dispersão cor*/
+    box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 32px;
+    padding: 20px;
+}
+
+.inside-main {
+    width: 500px;
+}
+
+#full-name-input,
+#email-address-input,
+#password-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #CFCDCD;
+}
+
+/*A pseudoclasse focus lida com o elemento quando ele está sendo focado*/
+#full-name-input:focus,
+#email-address-input:focus,
+#password-input:focus {
+    outline: none;
+}
+
+.pink-text {
+    color: #F85E9F;
+    font-size: 14px;
+}
+
+.read-text {
+    color: #7D7A7A;
+}
+
+.ou-text {
+    font-size: 20px;
+}
+
+.google-account-button {
+    width: 230px;
+    height: 50px;
+    background-image: url('../img/google-logo.png');
+    background-repeat: no-repeat;
+    background-position: 10px 12px;
+    border-radius: 12px;
+    background-color: #FFFCFC;
+    border: 1px solid #BCBCBC;
+    color: #7D7A7A;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.facebook-account-button {
+    width: 230px;
+    height: 50px;
+    background-image: url('../img/facebook-logo.png');
+    background-repeat: no-repeat;
+    background-position: 10px 14px;
+    border-radius: 12px;
+    background-color: #FFFCFC;
+    border: 1px solid #BCBCBC;
+    color: #7D7A7A;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.footer-text {
+    font-family: 'Montserrat', 'Thin Italic';
+    font-style: italic;
+}
+
+.footer-text, .footer-text a {
+    color: rgba(25, 24, 37, 0.5);
+}
+
+@media (max-width: 576px) {
+    #login-card {
+        height: 700px;
+    }
+
+    #login-card main {
+        width: 350px;
+    }
+
+    .inside-main {
+        width: 250px;
+    }
+
+    .facebook-account-button, .google-account-button {
+        width: 100%;
+    }
+
+    .google-account-button {
+        margin-bottom: 10px;
+    }
+
+    .login-button {
+        max-width:100%;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    #login-card main {
+        width: 500px;
+    }
+
+    .inside-main {
+        width: 400px;
+    }
+
+    .facebook-account-button, .google-account-button {
+        width: 100%;
+    }
+
+    .google-account-button {
+        margin-bottom: 10px;
+    }
+
+    .login-button {
+        max-width:100%;
+    }
+}

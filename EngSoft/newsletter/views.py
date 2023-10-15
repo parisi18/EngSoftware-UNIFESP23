@@ -29,10 +29,11 @@ class MailSubscriptionAPIView(GenericAPIView):
         except ApiClientError as error:
             print(error.text)
 
-    def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        email = serializer.validated_data['email']
+    def post(self, request):
+        # serializer = self.get_serializer(data=request.data)
+        # serializer.is_valid(raise_exception=True)
+        # email = serializer.validated_data['email']
+        email = request.data['email']
         self.subscribe_email(email)
         return Response({
             "status_code": status.HTTP_200_OK,

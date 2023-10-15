@@ -5,18 +5,16 @@ software like Google Maps and Google Custom Search Engine.
 https://getbootstrap.com/docs/5.3/getting-started/introduction/
 */
 
+/*Limpo todas as estilizações padrão de links*/
+a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
 /*Define a configuracao externa da navbar*/
 .nav-self-config {
     height: 90px;
     background-color: transparent !important;
-}
-
-/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
-@media(min-width:992px) {
-    .nav-self-config {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
 }
 
 /*Da o efeito laranja no canto superior da tela*/
@@ -32,6 +30,22 @@ https://getbootstrap.com/docs/5.3/getting-started/introduction/
     opacity: 0.5;
     filter: blur(250px);
 }
+
+/* .yellow-elipse {
+    /* Ellipse 24 */
+
+    /* position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 1351px;
+    top: 847px;
+
+    /* Yellow */
+    /* background: #FACD49;
+    opacity: 0.5;
+    filter: blur(250px);
+
+} */
 
 /*Cor branca no fundo do menu de itens*/
 .menu-self-config {
@@ -60,7 +74,8 @@ button {
 }
 
 button.button-shadow {
-    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08); /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
+    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08);
+    /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
 }
 
 /*Define estilo de botoes roxos*/
@@ -69,7 +84,8 @@ button.purple-button {
     background-color: #5D50C6;
     border-radius: 100px;
     border: none;
-    transition: border-color 0.3s, background-color 0.3s; /* Adiciona uma transição suave para a cor da borda */
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
 }
 
 button.purple-button:hover {
@@ -83,7 +99,8 @@ button.white-button {
     background-color: white;
     border-radius: 100px;
     border: 0.1px #EEEEEE solid;
-    transition: border-color 0.3s, background-color 0.3s; /* Adiciona uma transição suave para a cor da borda */
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
 }
 
 /*Define a dimensão de botões pequenos*/
@@ -105,6 +122,30 @@ button.big {
     height: 49px;
 }
 
+/*Define a fonte de título e botões*/
+body h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 120%;
+    font-weight: bold;
+    vertical-align: top;
+    color: #191825;
+}
+
+/*Corpo de textos. No figma seria a tipografia body*/
+body p {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    color: rgba(25, 24, 37, 1);
+}
+
+/*É para definir o título de tabelas ou legendas de imagens*/
+body .caption {}
+
 @media(max-width:720px) {
     .reduce-mobile-text span {
         font-size: 12px !important;
@@ -117,5 +158,13 @@ button.big {
 
     .mobile-make-column div {
         margin-bottom: 20px;
+    }
+}
+
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
+@media(min-width:992px) {
+    .nav-self-config {
+        padding-left: 100px;
+        padding-right: 100px;
     }
 }
