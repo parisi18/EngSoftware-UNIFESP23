@@ -37,4 +37,4 @@ jobs:
     - name: Run Tests
       working-directory: ${{ env.DJANGO_PROJECT_PATH }}
       run: |
-        python manage.py test
+        pytest # Run all tests using pytest
