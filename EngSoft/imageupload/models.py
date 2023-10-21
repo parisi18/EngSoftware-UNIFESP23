@@ -15,7 +15,7 @@ class AnimalCard(models.Model):
     # como uma instância de AnimalImage.
     # related_to é o nome do relacionamento entre esses dois modelos
     animal_images = models.ManyToManyField(AnimalImage, related_name='animal_cards')
-    diagnosed_images = models.IntegerField('Diangosed images', null=True)
+    diagnosed_images = models.IntegerField('Diagnosed images', null=True)
     verified_images = models.IntegerField('Verified images', null=True)
     owner_name = models.CharField('Owner name', max_length=50)
     owner_address = models.CharField('Owner address', max_length=100)
