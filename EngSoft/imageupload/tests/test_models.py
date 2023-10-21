@@ -1,10 +1,8 @@
 # tests/test_models.py
 import pytest
-from django.core.files.uploadedfile import SimpleUploadedFile
 from imageupload.models import AnimalCard
 import cv2
 import os
-import sys
 
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
