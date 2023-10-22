@@ -1,7 +1,5 @@
-# tests/test_models.py
 import pytest
 from imageupload.models import AnimalCard
-import cv2
 import os
 
 root_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
