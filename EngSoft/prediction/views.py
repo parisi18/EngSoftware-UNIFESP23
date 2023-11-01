@@ -50,7 +50,7 @@ def predicao(request):
         # Salva a imagem carregada em um local temporario
         fs = FileSystemStorage()
         image_path = fs.save(uploaded_image_name, uploaded_image)
-
+        
         # Inicializa a predicao
         label_and_score = initPrediction(image_path)
         return JsonResponse({'result': label_and_score})
@@ -58,6 +58,6 @@ def predicao(request):
     except Exception as e:
 
         # Log do exception com traceback
-        traceback.print_exc() 
+        traceback.print_exc()
 
         return JsonResponse({'erro': 'Ocorreu um erro interno no servidor.' + e})
