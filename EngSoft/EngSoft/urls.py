@@ -26,6 +26,7 @@ urlpatterns = [
     path('sobre-nos/', include('aboutus.urls'), name='aboutus'),
     path('api/', include('newsletter.urls')),
     path('entrar/', include('login.urls'), name='login'),
+    path('fale-conosco/', include('contactus.urls'), name='contactus')
 ]
 
 # essa configuracao permite o django servir imagens de mídia durante o desenvolvimento

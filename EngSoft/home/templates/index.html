@@ -41,10 +41,11 @@
             <a class="nav-link active" aria-current="page" href="#">Planos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Fale Conosco</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}">Fale Conosco</a>
           </li>
         </ul>
-        <button type="button" class="tiny white-button" style="color:#222831; border: none;"><a href="{% url 'loadlogin' %}">Log In</a></button>
+        <button type="button" class="tiny white-button" style="color:#222831; border: none;"><a
+            href="{% url 'loadlogin' %}">Log In</a></button>
         <button type="button" class="tiny purple-button" onclick="window.location.href='#'">Sign Up</button>
       </div>
     </div>
@@ -55,15 +56,17 @@
     <div class="container text-center">
       <div class="row align-items-center" style="height:500px;">
         <div class="col-12 col-md-5 text-start">
-          <h1>Líder no <span style="color:#F85E9F;">diagnóstico</span> de imagem veterinária <span style="color:#F85E9F;">com IA</span></h1>
+          <h1>Líder no <span style="color:#F85E9F;">diagnóstico</span> de imagem veterinária <span
+              style="color:#F85E9F;">com IA</span></h1>
           <p class="read-text mb-4">Aprimorando os cuidados veterinários por meio de soluções avançadas de IA</p>
           <div class="d-flex flex-row">
-            <button type="button" class="main-section-purple-button" onclick="window.location.href='#'">Ver planos</button>
+            <button type="button" class="main-section-purple-button" onclick="window.location.href='#'">Ver
+              planos</button>
             <button class="main-section-white-button" onclick="window.location.href='#'"></button>
           </div>
         </div>
         <div class="col-6 hide-mobile-element">
-          <img class="main-section-img" src="../static/img/dog.png">
+          <img class="main-section-img" src="{% static 'img/dog.png' %}">
         </div>
       </div>
     </div>
@@ -212,7 +215,8 @@
         </div>
         <p class="read-text mb-4">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
           piece of classical Latin literature from 45 BC.</p>
-        <svg class="p-md-5" width="373" height="334" viewBox="0 0 373 334" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="p-md-5" width="373" height="334" viewBox="0 0 373 334" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
           <rect x="0.683594" width="170" height="151" rx="32" fill="white" />
           <path
             d="M50.3786 66.42C48.6753 66.42 46.9836 66.1983 45.3036 65.755C43.6469 65.2883 42.2236 64.635 41.0336 63.795L43.2736 59.455C44.2069 60.1317 45.2803 60.6683 46.4936 61.065C47.7303 61.4617 48.9786 61.66 50.2386 61.66C51.6619 61.66 52.7819 61.38 53.5986 60.82C54.4153 60.26 54.8236 59.4783 54.8236 58.475C54.8236 57.845 54.6603 57.285 54.3336 56.795C54.0069 56.305 53.4236 55.9317 52.5836 55.675C51.7669 55.4183 50.6119 55.29 49.1186 55.29H42.8536L44.1136 41.5H59.0586V46.05H46.1436L49.0836 43.46L48.2086 53.295L45.2686 50.705H50.4486C52.8753 50.705 54.8236 51.0433 56.2936 51.72C57.7869 52.3733 58.8719 53.2717 59.5486 54.415C60.2253 55.5583 60.5636 56.8533 60.5636 58.3C60.5636 59.7467 60.2019 61.0883 59.4786 62.325C58.7553 63.5383 57.6353 64.53 56.1186 65.3C54.6253 66.0467 52.7119 66.42 50.3786 66.42ZM73.364 66.42C71.3574 66.42 69.5607 65.93 67.974 64.95C66.3874 63.9467 65.139 62.5 64.229 60.61C63.319 58.72 62.864 56.4333 62.864 53.75C62.864 51.0667 63.319 48.78 64.229 46.89C65.139 45 66.3874 43.565 67.974 42.585C69.5607 41.5817 71.3574 41.08 73.364 41.08C75.394 41.08 77.1907 41.5817 78.754 42.585C80.3407 43.565 81.589 45 82.499 46.89C83.409 48.78 83.864 51.0667 83.864 53.75C83.864 56.4333 83.409 58.72 82.499 60.61C81.589 62.5 80.3407 63.9467 78.754 64.95C77.1907 65.93 75.394 66.42 73.364 66.42ZM73.364 61.625C74.3207 61.625 75.149 61.3567 75.849 60.82C76.5724 60.2833 77.1324 59.4317 77.529 58.265C77.949 57.0983 78.159 55.5933 78.159 53.75C78.159 51.9067 77.949 50.4017 77.529 49.235C77.1324 48.0683 76.5724 47.2167 75.849 46.68C75.149 46.1433 74.3207 45.875 73.364 45.875C72.4307 45.875 71.6024 46.1433 70.879 46.68C70.179 47.2167 69.619 48.0683 69.199 49.235C68.8024 50.4017 68.604 51.9067 68.604 53.75C68.604 55.5933 68.8024 57.0983 69.199 58.265C69.619 59.4317 70.179 60.2833 70.879 60.82C71.6024 61.3567 72.4307 61.625 73.364 61.625ZM97.1189 66.42C95.1122 66.42 93.3156 65.93 91.7289 64.95C90.1422 63.9467 88.8939 62.5 87.9839 60.61C87.0739 58.72 86.6189 56.4333 86.6189 53.75C86.6189 51.0667 87.0739 48.78 87.9839 46.89C88.8939 45 90.1422 43.565 91.7289 42.585C93.3156 41.5817 95.1122 41.08 97.1189 41.08C99.1489 41.08 100.946 41.5817 102.509 42.585C104.096 43.565 105.344 45 106.254 46.89C107.164 48.78 107.619 51.0667 107.619 53.75C107.619 56.4333 107.164 58.72 106.254 60.61C105.344 62.5 104.096 63.9467 102.509 64.95C100.946 65.93 99.1489 66.42 97.1189 66.42ZM97.1189 61.625C98.0756 61.625 98.9039 61.3567 99.6039 60.82C100.327 60.2833 100.887 59.4317 101.284 58.265C101.704 57.0983 101.914 55.5933 101.914 53.75C101.914 51.9067 101.704 50.4017 101.284 49.235C100.887 48.0683 100.327 47.2167 99.6039 46.68C98.9039 46.1433 98.0756 45.875 97.1189 45.875C96.1856 45.875 95.3572 46.1433 94.6339 46.68C93.9339 47.2167 93.3739 48.0683 92.9539 49.235C92.5572 50.4017 92.3589 51.9067 92.3589 53.75C92.3589 55.5933 92.5572 57.0983 92.9539 58.265C93.3739 59.4317 93.9339 60.2833 94.6339 60.82C95.3572 61.3567 96.1856 61.625 97.1189 61.625ZM117.336 61.835V45.665H121.851V61.835H117.336ZM111.281 55.885V51.615H127.941V55.885H111.281Z"
@@ -425,7 +429,8 @@
       <div class="col-10 col-md-8 d-flex flex-column justify-content-center news-middle-col align-self-center">
         <p class="pink-title">Inscreva-se na nossa newsletter</p>
         <h1>Descubra o futuro dos cuidados veterinários com IA</h1>
-        <form method="post" class="w-100 mt-3 d-flex flex-column flex-md-row justify-content-md-center align-items-center"
+        <form method="post"
+          class="w-100 mt-3 d-flex flex-column flex-md-row justify-content-md-center align-items-center"
           id="newsletter-form" onsubmit="sendEmail(); return false;">
           {% csrf_token %}
           <input class="mb-4 mb-md-0 news-input" type="email" id="email">
@@ -492,7 +497,9 @@
         </div>
         <div class="col">
           <h6 class="reduce-mobile-text">Contato</h6>
-          <p>Fale Conosco</p>
+          <a href="{% url 'contactus' %}">
+            <p>Fale Conosco</p>
+          </a>
         </div>
         <div class="col">
           <h6 class="reduce-mobile-text">Encontre-nos</h6>
