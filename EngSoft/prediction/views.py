@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.core.files.storage import FileSystemStorage
 from .utils import initPrediction
+from EngSoft.settings import BASE_DIR
 
 def image_view(request):
     
@@ -46,10 +47,12 @@ def predicao(request):
 
         uploaded_image = request.FILES['image']
         uploaded_image_name = uploaded_image.name
+
+        destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}' 
         
         # Salva a imagem carregada em um local temporario
         fs = FileSystemStorage()
-        image_path = fs.save(uploaded_image_name, uploaded_image)
+        image_path = fs.save(destination_folder, uploaded_image)
         
         # Inicializa a predicao
         label_and_score = initPrediction(image_path)
