@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "newsletter",
     "rest_framework",
     "login",
+    "contactus",
 ]
 
 MIDDLEWARE = [
