@@ -1,33 +1,43 @@
-<form action="{% url 'image' %}" method="post" enctype="multipart/form-data" id="image-upload-form">
+<form id="image-upload-form">
     {% csrf_token %}
     <input type="file" name="image" accept="image/*">
-    <button type="submit">Upload</button>
 </form>
 
-<button id="predict-button">Predict</button>
+<button id="predict-button" disabled>Predict</button>
 
-<div id="prediction-result"> 
+<div id="prediction-result">
     <h1>Resultado: <span id="result-text">{{ res_pred }}</span></h1>
 </div>
 
-<script>
-    document.getElementById('predict-button').addEventListener('click', function() {
-        var form = document.getElementById('image-upload-form');
-        var formData = new FormData(form);
 
-        fetch(`{% url 'image' %}`, {
+<script>
+    // Disable the predict button by default
+    var predictButton = document.getElementById('predict-button');
+    predictButton.disabled = true;
+
+    // Add a change event listener to the file input
+    var fileInput = document.querySelector('input[name="image"]');
+    var predictButton = document.getElementById('predict-button');
+
+    fileInput.addEventListener('change', function() {
+        predictButton.disabled = false;
+    });
+
+    predictButton.addEventListener('click', function() {
+        var form = document.getElementById('image-upload-form');
+        console.log('1')
+        fetch('{% url "predicao" %}', {
             method: 'POST',
-            body: formData,
-            headers: {
-                'X-CSRFToken': '{{ csrf_token }}'
-            }
+            body: fileInput,
         })
         .then(response => response.text())
         .then(data => {
+            console.log('result:' + data)
             document.getElementById('result-text').textContent = data;
         })
         .catch(error => {
             console.error('Prediction failed:', error);
         });
+        console.log('2')
     });
 </script>
