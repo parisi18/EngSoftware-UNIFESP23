@@ -17,7 +17,6 @@
 
     // Add a change event listener to the file input
     var fileInput = document.querySelector('input[name="image"]');
-    var predictButton = document.getElementById('predict-button');
 
     fileInput.addEventListener('change', function() {
         predictButton.disabled = false;
@@ -25,19 +24,18 @@
 
     predictButton.addEventListener('click', function() {
         var form = document.getElementById('image-upload-form');
-        console.log('1')
+        var formData = new FormData(form);
+
         fetch('{% url "predicao" %}', {
             method: 'POST',
-            body: fileInput,
+            body: formData, // Send the entire form data
         })
         .then(response => response.text())
         .then(data => {
-            console.log('result:' + data)
             document.getElementById('result-text').textContent = data;
         })
         .catch(error => {
             console.error('Prediction failed:', error);
         });
-        console.log('2')
     });
 </script>
