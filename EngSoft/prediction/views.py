@@ -58,6 +58,6 @@ def predicao(request):
     except Exception as e:
 
         # Log do exception com traceback
-        traceback.print_exc()  
+        traceback.print_exc() 
 
         return JsonResponse({'erro': 'Ocorreu um erro interno no servidor.' + e})
