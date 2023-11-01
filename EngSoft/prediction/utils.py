@@ -1,4 +1,3 @@
-from django.http import JsonResponse
 import tensorflow as tf
 import keras
 import numpy as np
@@ -6,8 +5,8 @@ from EngSoft.settings import BASE_DIR
 
 def initPrediction(img_path):
     
-    model = tf.keras.models.load_model(f'{BASE_DIR}/prediction/model/meu_modelo.h5') 
-
+    model = tf.keras.models.load_model(f'{BASE_DIR}/prediction/model/meu_modelo.h5')
+    
     classes = ['fracture', 'normal']
 
     img_height = 180

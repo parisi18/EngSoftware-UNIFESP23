@@ -11,24 +11,26 @@
 
 
 <script>
-    // Disable the predict button by default
+    // Desabilita o botao predicao por padrao  
     var predictButton = document.getElementById('predict-button');
     predictButton.disabled = true;
 
-    // Add a change event listener to the file input
+    // Adiciona uma acao para o carregamento da imagem
     var fileInput = document.querySelector('input[name="image"]');
 
+    // Habilita o botao predicao
     fileInput.addEventListener('change', function() {
         predictButton.disabled = false;
     });
 
+    // Aciona a predicao ao clicar
     predictButton.addEventListener('click', function() {
         var form = document.getElementById('image-upload-form');
         var formData = new FormData(form);
 
         fetch('{% url "predicao" %}', {
             method: 'POST',
-            body: formData, // Send the entire form data
+            body: formData,
         })
         .then(response => response.text())
         .then(data => {
