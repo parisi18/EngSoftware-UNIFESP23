@@ -1,0 +1,9 @@
+<form action="{% url 'image' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*">
+    <button type="submit">Upload</button>
+
+    <h1>
+        Resultado: {pred_res:}
+    </h1>
+</form>
