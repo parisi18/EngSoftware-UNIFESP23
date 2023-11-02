@@ -1,0 +1,61 @@
+<form id="image-upload-form">
+    {% csrf_token %}
+    <input type="file" name="image" accept="image/*">
+</form>
+
+<button id="predict-button" disabled>Predict</button>
+
+<div>
+    <img id="uploaded-image" src="{% if image %}{{ image.image_url }}{% endif %}" alt="Uploaded Image">
+    <p id="no-image" {% if image %}style="display: none;"{% endif %}>No image available</p>
+</div>
+
+<div id="prediction-result">
+    <h1>Resultado: <span id="result-text">{{ res_pred }}</span></h1>
+</div>
+
+<script>
+    
+    var uploadedImage = document.getElementById('uploaded-image');
+    
+    var noImage = document.getElementById('no-image');
+
+    // Adiciona uma acao para o carregamento da imagem
+    var fileInput = document.querySelector('input[name="image"]');
+
+    // Add a change event listener to the file input
+    fileInput.addEventListener('change', function() {
+        // Hide the "No image available" message
+        noImage.style.display = 'none';
+
+        // Show the new uploaded image
+        uploadedImage.src = URL.createObjectURL(fileInput.files[0]);
+    });
+
+    // Desabilita o botao predicao por padrao  
+    var predictButton = document.getElementById('predict-button');
+    predictButton.disabled = true;
+
+    // Habilita o botao predicao
+    fileInput.addEventListener('change', function() {
+        predictButton.disabled = false;
+    });
+
+    // Aciona a predicao ao clicar
+    predictButton.addEventListener('click', function() {
+        var form = document.getElementById('image-upload-form');
+        var formData = new FormData(form);
+
+        fetch('{% url "predicao" %}', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('result-text').textContent = data;
+        })
+        .catch(error => {
+            console.error('Prediction failed:', error);
+        });
+    });
+</script>

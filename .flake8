@@ -9,4 +9,5 @@ max-line-length = 100
 # W292 no newline at end of file
 # W391 blank line at end of file
 # W293 blank line contains whitespace
-ignore = E231,E302,W292,W391,W293
+# W291 trailing whitespace
+ignore = E231,E302,W292,W391,W293,W291
