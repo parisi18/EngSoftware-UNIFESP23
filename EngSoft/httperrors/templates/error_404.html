@@ -16,13 +16,22 @@
 </head>
 
 <body>
-    <img src="{% static 'img/404.png' %}" alt="404-error" width="100px" height="50px">
-    <p>Parece que tivemos um problema com esta página.<br>Por favor, <a style="color: #F85E9F; text-decoration: none;" onclick="reload()" href="">recarregue-a</a></p>
+    <header class="gradient"></header>
+    <section class="main-section">
+        <img src="{% static 'img/404.png' %}" alt="404-error" width="570px" height="300px">
+        <p>Parece que tivemos um problema com esta página.<br>Por favor, <a
+                style="color: #F85E9F; text-decoration: none;" onclick="reload()" href="">recarregue-a</a></p>
+        <button type="button" class="purple-button medium reload-button">Recarregar</button>
+    </section>
+    <footer class="gradient">
+        <p class="footer-text">©2023 Todos os direitos reservados. Política de Privacidade e Termos de Uso.</p>
+        <p class="footer-text">contato@petscan.com</p>
+    </footer>
     <!--Esse link puxa por cdn arquivos js da bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-        <script src="{% static 'js/script-error.js' %}"></script>
+    <script src="{% static 'js/script-error.js' %}"></script>
 </body>
 
 </html>

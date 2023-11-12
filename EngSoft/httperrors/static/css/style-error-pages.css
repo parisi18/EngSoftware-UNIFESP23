@@ -1,0 +1,51 @@
+.gradient {
+    background-color: rgba(93, 80, 198, 1);
+    color: white;
+}
+
+header {
+    border-top: 10px solid rgba(93, 80, 198, 1);
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 100px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+.reload-button {
+    background-image: url('../img/reload.png');
+    background-size: 20px 20px;
+    background-position: 100px 15px;
+    background-repeat: no-repeat;
+}
