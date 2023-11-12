@@ -1,3 +1,10 @@
+/*Corpo de textos. No figma seria a tipografia body*/
+body p {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    color: rgba(25, 24, 37, 1);
+}
+
 .gradient {
     color: white;
     background: linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
@@ -16,8 +23,7 @@ footer {
 }
 
 .footer-text {
-    font-family: 'Roboto';
-    font-style: normal;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;
     line-height: 25px;
