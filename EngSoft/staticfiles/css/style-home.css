@@ -1,0 +1,365 @@
+/*For more straightforward sizing in CSS, we switch the global box-sizing value 
+from content-box to border-box. This ensures padding does not affect the final 
+computed width of an element, but it can cause problems with some third-party 
+software like Google Maps and Google Custom Search Engine.
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+*/
+
+/* Tentar evitar o vazamento de grafismos
+body {
+    overflow-x: hidden;
+} */
+
+.main-section-image {
+    width: 100%;
+    max-width:100%;
+    object-fit: cover;
+}
+
+/*Limpo todas as estilizações padrão de links*/
+a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
+/*Define a configuracao externa da navbar*/
+.nav-self-config {
+    height: 90px;
+    background-color: transparent !important;
+}
+
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
+@media(min-width:992px) {
+    .nav-self-config {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/*Da o efeito laranja no canto superior da tela*/
+.orange-elipse {
+    /* Ellipse 23 */
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -356px;
+    top: -223px;
+    /* Orange */
+    background: #FF5722;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+/*Cor branca no fundo do menu de itens*/
+.menu-self-config {
+    background-color: white;
+}
+
+/*Espacamento entre itens do menu e sobreposicao dos clicaveis ao grafismo laranja*/
+.menu-self-config li {
+    margin-left: 40px;
+    z-index: 1;
+}
+
+/*Sobreposicao do icone clicaveL ao grafismo laranja*/
+.navbar-brand-self-config {
+    z-index: 1;
+}
+
+.navbar-toggler-self-config {
+    z-index: 1;
+}
+
+/*Define esitlo padrao de botoes no geral*/
+button {
+    font-weight: 400;
+    line-height: 120%;
+}
+
+button.button-shadow {
+    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08);
+    /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 100px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+/*Define estilo de botoes brancos*/
+button.white-button {
+    color: #5D50C6;
+    background-color: white;
+    border-radius: 100px;
+    border: 0.1px #EEEEEE solid;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+/*Define a dimensão de botões pequenos*/
+button.tiny {
+    font-size: 14px;
+    width: 100px;
+    height: 49px;
+}
+
+/*Define tamanho de botões médios*/
+button.medium {
+    width: 150px;
+    height: 49px;
+}
+
+/*Define tamanho de botões grandes*/
+button.big {
+    width: 500px;
+    height: 49px;
+}
+
+/*Aumento de altura da seção da newsletter*/
+#newsletter-section {
+    height: 450px;
+    max-height: 100%;
+    margin-bottom: 100px;
+}
+
+/*Alteração de cor "Inscreva-se na nossa newsletter"*/
+.pink-title {
+    /* Inscreva-se na nossa newsletter */
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    /* Secondary */
+    color: #F85E9F;
+}
+
+/*Formatacao para textos de leitura curta/media*/
+.read-text {
+    /* Body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    /* Grey Scale/Black 50 */
+    color: rgba(25, 24, 37, 0.5);
+}
+
+/*Estilizo botões de call-to-action*/
+.call-to-action-button {
+    padding: 10px 20px;
+    border: 1px solid rgba(201, 201, 201, 1);
+    border-radius: 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    /* Transforme o cursor em uma mãozinha */
+    background-color: white;
+    color: #FF5722;
+    font-weight: bold;
+    width: 100%;
+    height: 60px;
+}
+
+/*Alteração de cor "Descubra o futuro dos cuidados veterinários com IA"*/
+.news-middle-col h1 {
+    width: 70%;
+}
+
+/*Estilizo o input "Seu email"*/
+.news-input {
+    background-image: url('../img/seu-email-img.png');
+    background-size: 100px 20px;
+    background-position: 30px 20px;
+    background-repeat: no-repeat;
+    border-radius: 32px;
+    border: none;
+    height: 60px;
+    width: 50%;
+    margin-right: 30px;
+    padding-left: 40px;
+}
+
+.news-middle-col button {
+    width: 25%;
+}
+
+/* Remove o background-image quando o input está em foco */
+.news-input:focus {
+    background-image: none;
+}
+
+/*Estilizo a coluna da newsletter*/
+.news-middle-col {
+    background-color: rgba(250, 205, 73, 0.15);
+    height: 400px;
+    padding: 20px;
+    align-items: center;
+    border-radius: 32px;
+    z-index: 100;
+}
+
+/*Botão da newsletter*/
+button.news-button {
+    font-weight: bold;
+    height: 60px;
+}
+
+/* Alinho o objeto a direita da tag pai*/
+.align-at-right {
+    position: absolute;
+    right: 0;
+}
+
+/* Alinho o objeto a esquerda da tag pai*/
+.align-at-left {
+    position: absolute;
+    left: 0;
+}
+
+#card-section {
+    height: 700px;
+}
+
+#highlights-section {
+    height: 700px;
+}
+
+.hide-desktop-element {
+    display: none;
+}
+
+.hide-mobile-element {
+    display: block;
+}
+
+#plans-section {
+    margin-bottom: 100px;
+}
+
+.plan-card {
+    /*Sombra a direita*/
+    /*Offset-x offset-y difusao/espalhamento cor*/
+    box-shadow: 10px 25px 4px rgba(0, 0, 0, 0.05), -5px 25px 4px rgba(0, 0, 0, 0.03);
+    border-radius: 32px;
+    height: 380px;
+    width: 350px;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+.plans-section-title {
+    margin-left: 105px;
+    margin-bottom: 30px;
+}
+
+.pink-price-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+
+    /* Secundária */
+    color: #F85E9F;
+}
+
+.plans-button-shadow {
+    box-shadow: 1px 25px 4px rgba(0, 0, 0, 0.04);
+}
+
+#services-section {
+    height: 700px;
+}
+
+#main-section {
+    height: 500px;
+}
+
+.main-section-purple-button {
+    border-radius: 100px;
+    height: 45px;
+    width: 150px;
+    margin-right: 15px;
+    background-color: #5D50C6;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.main-section-white-button {
+    border-radius: 100px;
+    height: 45px;
+    width: 250px;
+    background-image: url('../img/demonstracao-main.png');
+    background-size: 160px 25px;
+    background-position: 40px 10px;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: 0.1px #EEEEEE solid;
+}
+
+@media(max-width:768px) {
+    .reduce-mobile-text span {
+        font-size: 12px !important;
+    }
+
+    /*Deita o rodapé*/
+    .mobile-make-column {
+        flex-direction: column;
+    }
+
+    .mobile-make-column div {
+        margin-bottom: 20px;
+    }
+
+    .news-middle-col input {
+        width: 100%;
+    }
+
+    .news-middle-col button {
+        width: 100%;
+    }
+
+    .hide-desktop-element {
+        display: block;
+    }
+
+    .hide-mobile-element {
+        display: none;
+    }
+
+    .news-middle-col h1 {
+        width: 100%;
+        /* font-size: 24px; */
+    }
+
+    .news-input {
+        margin-right: 0px;
+    }
+
+    .plans-section-title {
+        margin-left: 0px;
+    }
+
+    .plan-card {
+        margin-bottom: 50px;
+    }
+
+    #highlights-section {
+        height: 900px;
+    }
+}
