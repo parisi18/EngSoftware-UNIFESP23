@@ -4,7 +4,7 @@
 }
 
 header {
-    background: linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
+    border-top: 10px solid linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
 }
 
 footer {
