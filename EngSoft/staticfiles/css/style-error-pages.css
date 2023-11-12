@@ -80,13 +80,17 @@ button.purple-button:hover {
 @media(max-width:709px) {
     footer {
         flex-direction: column;
-        height: 100px;
+        height: 130px;
         justify-content: space-around;
     }
 
     img {
         width: 300px !important;
         height: 150px !important;
+    }
+
+    .main-section p {
+        font-size: 12px;
     }
 
     .footer-text {
