@@ -76,3 +76,14 @@ button.purple-button:hover {
     opacity: 0.5;
     filter: blur(250px);
 }
+
+@media(max-width:709px) {
+    footer {
+        flex-direction: column;
+    }
+
+    img {
+        width: 300px !important;
+        height: 100px !important;
+    }
+}
