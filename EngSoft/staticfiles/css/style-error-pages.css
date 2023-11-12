@@ -1,6 +1,7 @@
 .gradient {
     background-color: rgba(93, 80, 198, 1);
     color: white;
+    background: linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
 }
 
 header {
@@ -48,15 +49,11 @@ button.purple-button:hover {
     color: white;
 }
 
-/*Define tamanho de botões grandes*/
-button.big {
-    width: 500px;
-    height: 49px;
-}
-
 .reload-button {
     background-image: url('../img/reload.png');
     background-size: 20px 20px;
     background-position: 100px 15px;
     background-repeat: no-repeat;
+    width: 200px;
+    height: 49px;
 }
