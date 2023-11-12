@@ -11,6 +11,7 @@ footer {
     height: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .footer-text {
@@ -20,19 +21,23 @@ footer {
     font-size: 14px;
     line-height: 25px;
     color: #FFFFFF;
+    margin-bottom: 0px;
+    padding: 10px;
 }
 
 .main-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    height: 800px;
 }
 
 /*Define estilo de botoes roxos*/
 button.purple-button {
     color: white;
     background-color: #5D50C6;
-    border-radius: 100px;
+    border-radius: 10px;
     border: none;
     transition: border-color 0.3s, background-color 0.3s;
     /* Adiciona uma transição suave para a cor da borda */
@@ -41,6 +46,12 @@ button.purple-button {
 button.purple-button:hover {
     background-color: #7d70e6;
     color: white;
+}
+
+/*Define tamanho de botões grandes*/
+button.big {
+    width: 500px;
+    height: 49px;
 }
 
 .reload-button {
