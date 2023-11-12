@@ -81,10 +81,15 @@ button.purple-button:hover {
     footer {
         flex-direction: column;
         height: 100px;
+        justify-content: space-around;
     }
 
     img {
         width: 300px !important;
         height: 150px !important;
+    }
+
+    .footer-text {
+        margin-bottom: 15px;
     }
 }
