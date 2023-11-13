@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="{% static 'css/style-animalcard.css' %}" rel="stylesheet">
+    <!-- <link href="{% static 'css/style-imagedisplay.css' %}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
 
@@ -180,23 +181,34 @@
                     </a>
                 </div>
                 <div class="col intern-painel-self-config">
+                    <div class="row">
+                        <div class="col-md-3 col-12">
 
-                    <div>
-                        <img id="uploaded-image" src="{% if image %}{{ image.image_url }}{% endif %}" alt="Uploaded Image">
-                        <p id="no-image" {% if image %}style="display: none;"{% endif %}>Nenhuma imagem selecionada</p>
-                    </div>
-                    
-                    <form id="image-upload-form">
-                        {% csrf_token %}
-                        <input type="file" name="image" accept="image/*">
-                    </form>
-                    
-                    <button type="button" class="tiny purple-button logged-user-button" id="predict-button" disabled>Predict</button>
-                    
-                    <div id="prediction-result">
-                        <h1>Resultado: <span id="result-text">{{ res_pred }}</span></h1>
-                    </div>
+                            <div>
+                                <img id="uploaded-image" src="{% if image %}{{ image.image_url }}{% endif %}" alt="Uploaded Image">
+                                <p id="no-image" {% if image %}style="display: none;"{% endif %}>Nenhuma imagem selecionada</p>
+                            </div>
+                            
+                            <form id="image-upload-form">
+                                {% csrf_token %}
+                                <input id="choose-file-button" type="file" name="image" accept="image/*">
+                            </form>
+                            
+                            <button style="display:block; width: 260px; height: 29px; background-color: #5D50C6; color:white; border-radius: 100px; margin-top: 5px; border:none;" type="button" id="predict-button" disabled>Predict</button>
 
+                        </div>
+                    
+                            
+                        
+                        <div class="col-md-8 col-12 d-flex" >
+                            <div class="barra" style="height: 150px; width: 1px; display: block; background-color: #DAE3FF; margin-left: 15px; margin-right: 15px;">
+                            </div>
+                            <div id="predict-result">
+                                <h4>Resultado:</h4> <br><span id="result-text">{{ res_pred }}</span>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,6 +286,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
         
