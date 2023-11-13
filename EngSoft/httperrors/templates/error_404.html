@@ -22,11 +22,12 @@
 
     <!--Seção principal-->
     <section class="main-section">
-        <img src="{% static 'img/500.png' %}" alt="404-error" width="500px" height="300px">
-        <p style="color:rgba(38, 50, 56, 1);font-weight: 700;">Desculpe, encontramos um erro interno no
-            servidor.<br>Nossa equipe já está trabalhando para resolvê-lo.<br>Por favor, <a
-                style="color: #F85E9F !important; text-decoration: none;" href="">tente novamente mais tarde</a></p>
-        <button type="button" class="purple-button reload-button" onclick="reload()">Recarregar</button>
+        <img src="{% static 'img/401.png' %}" alt="404-error" width="500px" height="300px">
+        <p style="color:rgba(38, 50, 56, 1);font-weight: 700;">Você não tem permissão para visualizar esta
+            página.<br>Por favor, <a style="color: #F85E9F !important; text-decoration: none;"
+                href="{% url 'login' %}">faça login com uma conta autorizada.</a></p>
+        <button type="button" class="purple-button reload-button"><a href="{% url 'login' %}"
+                style="color:white; text-decoration: none;">Fazer Login</a></button>
     </section>
 
     <!--Grafismo triangulos-->
