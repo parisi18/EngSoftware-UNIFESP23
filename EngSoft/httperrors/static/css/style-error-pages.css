@@ -63,6 +63,11 @@ button.purple-button:hover {
     height: 49px;
 }
 
+.login-button {
+    width: 200px;
+    height: 49px;
+}
+
 /*Da o efeito laranja no canto superior da tela*/
 .orange-elipse {
     /* Ellipse 23 */
