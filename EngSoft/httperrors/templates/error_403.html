@@ -22,11 +22,13 @@
 
     <!--Seção principal-->
     <section class="main-section">
-        <img src="{% static 'img/404.png' %}" alt="404-error" width="500px" height="300px">
-        <p style="color:rgba(38, 50, 56, 1);font-weight: 700;">Parece que tivemos um problema com esta página.<br>Por
-            favor, <a style="color: #F85E9F !important; text-decoration: none;" onclick="reload()"
-                href="">recarregue-a</a></p>
-        <button type="button" class="purple-button reload-button" onclick="reload()">Recarregar</button>
+        <img src="{% static 'img/403.png' %}" alt="404-error" width="500px" height="300px">
+        <p style="color:rgba(38, 50, 56, 1);font-weight: 700;">Você não tem as permissões para acessar esta página.<br>Por
+            favor, <a style="color: #F85E9F !important; text-decoration: none;" href="mailto:contato@petscan.com">entre
+                em contato com o administrador do sistema</a></p>
+        <button type="button" class="purple-button login-button"><a
+                style="color: white; text-decoration: none;" href="mailto:contato@petscan.com">Obter
+                ajuda</a></button>
     </section>
 
     <!--Grafismo triangulos-->
@@ -51,8 +53,11 @@
     </svg>
 
     <footer class="gradient">
-        <p class="footer-text">©2023 Todos os direitos reservados. <a href="#" style="color: white; text-decoration: none;">Política de Privacidade</a> e <a href="#" style="color: white; text-decoration: none;">Termos de Uso</a>.</p>
-        <p class="footer-text"><a href="mailto:contato@petscan.com" style="color: white; text-decoration: none;">contato@petscan.com</a></p>
+        <p class="footer-text">©2023 Todos os direitos reservados. <a href="#"
+                style="color: white; text-decoration: none;">Política de Privacidade</a> e <a href="#"
+                style="color: white; text-decoration: none;">Termos de Uso</a>.</p>
+        <p class="footer-text"><a href="mailto:contato@petscan.com"
+                style="color: white; text-decoration: none;">contato@petscan.com</a></p>
     </footer>
     <!--Esse link puxa por cdn arquivos js da bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
