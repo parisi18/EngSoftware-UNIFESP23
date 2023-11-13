@@ -11,7 +11,7 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
         # password1 eh o password inicial
-        # password2 eh a confirmacao do password
+        # password2 eh a confirmacao do password inicial
 
     def save(self, commit=True):
         user = super(UserRegisterForm, self).save(commit=False)
@@ -19,4 +19,3 @@ class UserRegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
-        

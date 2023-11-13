@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib import messages
 # Create your views here.
 
@@ -15,5 +15,4 @@ def register_request(request):
         else:
             messages.error(request, "Unsuccessful registration. Invalid information.")
     form = UserRegisterForm()
-    return render(request=request, template_name="userRegister/register.html", context={"register_form":form})
-
+    return render(request=request, template_name="register.html", context={"register_form":form})
