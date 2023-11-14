@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - develop # alterado para develop ate que o produto entre em release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.14 # essa e a action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "petscan-hcc" # deve ser unico no Heroku
+          heroku_email: "petscan.ia.engsoft@gmail.com"
+
+# ref: https://github.com/marketplace/actions/deploy-to-heroku 
