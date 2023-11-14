@@ -5,8 +5,8 @@ from django.template.loader import render_to_string
 def error_404_page(request, exception):
 
     # load_to_string renderiza um template como get_template e chama render.
-    # usamos essa abordagem aqui, pois HttpResponse precisa 
-    # trabalhar com os códigos de status HTTP, mas não pode 
+    # usamos essa abordagem aqui, pois HttpResponse precisa
+    # trabalhar com os códigos de status HTTP, mas não pode
     # renderizar templates ao mesmo tempo
     content = render_to_string('error_404.html', None, request)
 
