@@ -1,8 +1,11 @@
 from django.test import TestCase
+import pytest
+from django.test import Client
 from .error_http_500 import ErrorHttp500
 from .error_http_401 import ErrorHttp401
 from .error_http_403 import ErrorHttp403
 from .error_http_400 import ErrorHttp400
+from .error_http_404 import ErrorHttp404
 
 # https://docs.djangoproject.com/en/4.2/topics/testing/overview/
 
@@ -15,16 +18,16 @@ from .error_http_400 import ErrorHttp400
 
 class HttpError(TestCase):
     def test_http_status_code_404(self):
-        # crio uma requisicao get no lado do cliente
-        response = self.client.get('ok-alright.html')
 
-        # verifico se o status http é 404
-        self.assertEqual(response.status_code, 404)
+        client = Client()
+        response = client.get('/ok-alright.html')
 
-        # assertTemplate verifica se o template foi usado
-        # durante a execucao do bloco width
-        with self.assertTemplateUsed('error_404.html'):
-            self.client.get('httperrors.views.error_404_page')
+        # verifico com pytest se o status HTTP é 404
+        assert response.status_code == 404
+
+        # verifico com pytest se o template correto foi usado
+        with pytest.raises(ErrorHttp404, match='error_404.html'):
+            response = client.get('/httperrors/views/error_404_page')
 
     def test_http_status_code_500(self):
         try:
