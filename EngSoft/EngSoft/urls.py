@@ -18,9 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-# sao caminhos completos para views que lidam com esses status http por padrao no Django
-from django.conf.urls import handler400, handler403, handler404, handler500
+from httperrors import views
 
+# rotas de status http 200
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('animais/', include('imageupload.urls'), name='animals'),
@@ -35,9 +35,9 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# configuracao das views que vao processar essa requisicao
-handler401 = 'httperrors.views.error_401_page'
-handler400 = 'httperrors.views.error_400_page'
-handler403 = 'httperrors.views.error_403_page'
-handler404 = 'httperrors.views.error_404_page'
-handler500 = 'httperrors.views.error_500_page'
+# rotas de status de erro http
+handler401 = views.error_401_page
+handler400 = views.error_400_page
+handler403 = views.error_403_page
+handler404 = views.error_404_page
+handler500 = views.error_500_page
