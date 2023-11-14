@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
-# from decouple import Config, RepositoryEnv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,7 +125,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/" # em desenvolvimento
+STATIC_URL = "static/"  # em desenvolvimento
 
 # define a rota para armazenar todos os arquivos estáticos (em produção)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -143,17 +142,10 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # >>>>>>> Mailchimp credentials <<<<<<<<
-# DEVEM SER DESCOMENTADAS PARA SEREM UTILIZADAS
 
-# config = Config(RepositoryEnv('./.env'))
-
-# MAILCHIMP_API_KEY = config('MP_API_KEY')
-# MAILCHIMP_DATA_CENTER = config('MP_DATA_CENTER')
-# MAILCHIMP_LIST_ID = config('MP_LIST_ID')
-
-# >>>>>>> Mailchimp credentials provisórioas <<<<<<<<
-# DEVEM SER DESCOMENTADAS PARA SEREM UTILIZADAS
-
-MAILCHIMP_API_KEY = "26d724297d3435f083eb3d3586421b27-us21"
-MAILCHIMP_DATA_CENTER = 'us21'
-MAILCHIMP_LIST_ID = "8d31bf3aee"
+# KEY = os.environ.get('API_KEY', 'meu_valor_padrão')
+# vai evitar conflito no CI pq o padrao eh NONE
+# As KEYS padrao podem ser expostas, pois a API_KEY foi revogada
+MAILCHIMP_API_KEY = os.environ.get('MP_API_KEY', '587422fdfb8064848586bb3493f1eb1b-us21')
+MAILCHIMP_DATA_CENTER = os.environ.get('MP_DATA_CENTER', 'us21')
+MAILCHIMP_LIST_ID = os.environ.get('MP_LIST_ID', '8d31bf3aee')
