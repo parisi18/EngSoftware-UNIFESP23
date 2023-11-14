@@ -31,13 +31,13 @@ urlpatterns = [
     path('fale-conosco/', include('contactus.urls'), name='contactus')
 ]
 
-# essa configuracao permite o django servir imagens de mídia durante o desenvolvimento
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 # rotas de status de erro http
 handler401 = views.error_401_page
 handler400 = views.error_400_page
 handler403 = views.error_403_page
 handler404 = views.error_404_page
 handler500 = views.error_500_page
+
+# essa configuracao permite o django servir imagens de mídia durante o desenvolvimento
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

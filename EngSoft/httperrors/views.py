@@ -1,4 +1,6 @@
-from django.http import HttpResponseNotFound, HttpResponseBadRequest, HttpResponseServerError, HttpResponseNotAllowed, HttpResponseForbidden
+from django.http import HttpResponseNotFound, HttpResponseBadRequest
+from django.http import HttpResponseServerError, HttpResponseNotAllowed
+from django.http import HttpResponseForbidden
 from django.template.loader import render_to_string
 
 # page not found - recurso nao encontrado

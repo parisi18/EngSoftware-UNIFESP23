@@ -31,7 +31,7 @@ class HttpError(TestCase):
             with self.assertRaises(ErrorHttp500):
                 # emulo a resposta de status 500 do servidor
                 raise ErrorHttp500('Make response code 500!')
-        except:
+        except ErrorHttp400:
             with self.assertTemplateUsed('error_500.html'):
                 self.client.get('httperrors.views.error_500_page')
 
@@ -39,7 +39,7 @@ class HttpError(TestCase):
         try:
             with self.assertRaises(ErrorHttp401):
                 raise ErrorHttp401('Make response code 401!')
-        except:
+        except ErrorHttp401:
             with self.assertTemplateUsed('error_401.html'):
                 self.client.get('httperrors.views.error_401_page')
 
@@ -47,7 +47,7 @@ class HttpError(TestCase):
         try:
             with self.assertRaises(ErrorHttp403):
                 raise ErrorHttp403('Make response code 403!')
-        except:
+        except ErrorHttp403:
             with self.assertTemplateUsed('error_403.html'):
                 self.client.get('httperrors.views.error_403_page')
 
@@ -55,6 +55,6 @@ class HttpError(TestCase):
         try:
             with self.assertRaises(ErrorHttp400):
                 raise ErrorHttp400('Make response code 400!')
-        except:
+        except ErrorHttp400:
             with self.assertTemplateUsed('error_400.html'):
                 self.client.get('httperrors.views.error_400_page')
