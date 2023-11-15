@@ -22,8 +22,9 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN python EngSoft/manage.py collectstatic --noinput
 
 # Make port 80 available to the world outside this container
-EXPOSE 80 
-# parece que o heroku disponibiliza uma porta de maneira dinamica atraves da var PORT
+# EXPOSE 80 
+# parece que o heroku disponibiliza uma porta de maneira dinamica atraves da var PORT, portanto EXPOSE nao eh respeitado em producao, apenas para teste local
 
-# Run the application 
-CMD gunicorn EngSoft.wsgi:application --bind 0.0.0.0:80
+# Run the application
+# Remocao da backlash da $PORT com https://stackoverflow.com/questions/14394027/heroku-django-app-crashing-on-startup-not-a-valid-port-number
+CMD gunicorn EngSoft.wsgi:application --bind 0.0.0.0:${$PORT##\\}
