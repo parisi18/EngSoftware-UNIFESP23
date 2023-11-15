@@ -27,4 +27,4 @@ RUN python EngSoft/manage.py collectstatic --noinput
 
 # Run the application
 # Remocao da backlash \ da $PORT com https://stackoverflow.com/questions/14394027/heroku-django-app-crashing-on-startup-not-a-valid-port-number
-CMD gunicorn EngSoft.wsgi:application --bind 0.0.0.0:${PORT##\\}
+CMD gunicorn --pythonpath EngSoft EngSoft.wsgi:application --bind 0.0.0.0:${PORT##\\}
