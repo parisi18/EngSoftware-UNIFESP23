@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.10-alpine
+FROM python:3.10.12
 
 # Set environment variables
 # Usado para evitar a criacao de arquivos bytecode .pyc, tornando a execucao mais eficiente
