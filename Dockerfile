@@ -16,7 +16,7 @@ WORKDIR /app
 COPY . /app
 
 # coleta arquivos estáticos
-RUN python EngSoft.manage.py collectstatic --noinput
+RUN python EngSoft/manage.py collectstatic --noinput
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
