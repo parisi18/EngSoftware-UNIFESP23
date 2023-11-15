@@ -15,11 +15,11 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# coleta arquivos estáticos
-RUN python EngSoft/manage.py collectstatic --noinput
-
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
+
+# coleta arquivos estáticos
+RUN python EngSoft/manage.py collectstatic --noinput
 
 # Make port 80 available to the world outside this container
 # EXPOSE 80 parece que o heroku disponibiliza uma porta de maneira dinamica atraves da var PORT
