@@ -22,7 +22,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN python EngSoft/manage.py collectstatic --noinput
 
 # Make port 80 available to the world outside this container
-# EXPOSE 80 parece que o heroku disponibiliza uma porta de maneira dinamica atraves da var PORT
+EXPOSE 80 # parece que o heroku disponibiliza uma porta de maneira dinamica atraves da var PORT
 
 # Run the application 
-CMD gunicorn EngSoft.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn EngSoft.wsgi:application --bind 0.0.0.0:80
