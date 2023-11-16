@@ -28,7 +28,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,8 +45,14 @@ INSTALLED_APPS = [
     "login",
     "contactus",
     "prediction",
-    "httperrors"
+    "httperrors",
+    "userRegister",
+    "crispy_forms",
+    "crispy_bootstrap4"
 ]
+
+# Para a criacao da form
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

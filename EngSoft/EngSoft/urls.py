@@ -29,7 +29,8 @@ urlpatterns = [
     path('api/', include('newsletter.urls')),
     path('entrar/', include('login.urls'), name='login'),
     path('fale-conosco/', include('contactus.urls'), name='contactus'),
-    path('prediction/', include('prediction.urls'))
+    path('prediction/', include('prediction.urls')),
+    path('register/', include('userRegister.urls')),
 ]
 
 # rotas de status de erro http
