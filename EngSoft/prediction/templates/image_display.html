@@ -250,14 +250,20 @@
                                 height: auto;
                                 margin-top: 10px; /* Ajuste o valor conforme necessário para o espaçamento desejado */
                             }
+
+                            #progress-bar-container {
+                                width: 100%;
+                                margin-top: 10px;
+                            }
+
+                            #progress-bar {
+                                width: 500px;
+                                height: 10px;
+                                background-color: #4CAF50; 
+                            }
+
                         </style>
                         
-                        <script>
-                            document.getElementById('choose-file-button').addEventListener('change', function() {
-                                var predictButton = document.getElementById('predict-button');
-                                predictButton.disabled = !this.value; // Desativa o botão Predict se nenhum arquivo for selecionado
-                            });
-                        </script>
                         
                         <div class="col-md-3 col-12">
                             <div>
@@ -277,11 +283,17 @@
                         </div>
                                                                 
                         <div class="col-md-8 col-12 d-flex" >
+
                             <div class="barra" style="height: 150px; width: 1px; display: block; background-color: #DAE3FF; margin-left: 30px; margin-right: 30px;">
                             </div>
+
                             <div id="predict-result">
                                 <h4>Resultado:</h4> <br><span id="result-text">{{ res_pred }}</span>
+                                <div id="progress-bar-container" style="display: none;">
+                                    <div id="progress-bar"></div>
+                                </div>
                             </div>
+
                         
                         </div>
                     </div>
@@ -408,6 +420,45 @@
             .catch(error => {
                 console.error('Prediction failed:', error);
             });
+        });
+
+        document.getElementById('predict-button').addEventListener('click', function() {
+            var predictButton = this;
+            predictButton.disabled = true; // Desativa o botao de predicao
+
+            // Esconde o resultado antes de uma nova predicao
+            var resultText = document.getElementById('result-text');
+            resultText.style.display = 'none';
+
+            // Mostra a progress bar
+            var progressBarContainer = document.getElementById('progress-bar-container');
+            progressBarContainer.style.display = 'block';
+            
+            // Simula a progressao gradual (demonstracao apenas crias)
+            var progressBar = document.getElementById('progress-bar');
+            var width = 1; // Starting width
+
+            progressBar.style.width = '1%';
+
+            var interval = setInterval(function() {
+                if (width >= 200) {
+                    clearInterval(interval);
+
+                    // Esconde a progress bar depois que termina a predicao
+                    progressBarContainer.style.display = 'none';
+
+                    // Habilita o botao de predicao
+                    predictButton.disabled = false;
+
+                    setTimeout(function(){
+                        resultText.style.display = 'block';
+                    }, 0); //5 sec de delay
+
+                } else {
+                    width += 2; 
+                    progressBar.style.width = width + '%';
+                }
+            }, 50); // Deveria contar o valor real do tempo de predicao, ajustar com width
         });
         
     </script>
