@@ -1,0 +1,5 @@
+
+# This specifies the Docker image to build for the apps web process.
+build:
+    docker:
+        web: Dockerfile
