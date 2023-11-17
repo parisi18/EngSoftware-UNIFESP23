@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - develop # alterado para develop ate que o produto entre em release
+      - deploy # alterado para deploy para teste, mas devera ser develop ate que o produto entre em release
 
 jobs:
   build:
