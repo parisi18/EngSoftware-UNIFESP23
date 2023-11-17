@@ -17,17 +17,16 @@ from .error_http_404 import ErrorHttp404
 # a ideia aqui foi a de verificar se as rotas existem e se retornam os templates
 
 class HttpError(TestCase):
-    def test_http_status_code_404(self):
+    def test_http_status_code_404(client):
+        # Faça a requisição à view
+        response = client.get('/httperrors/views/error_404_page')
 
-        client = Client()
-        response = client.get('/ok-alright.html')
-
-        # verifico com pytest se o status HTTP é 404
+        # Verifique se o status HTTP é 404
         assert response.status_code == 404
 
-        # verifico com pytest se o template correto foi usado
-        with pytest.raises(ErrorHttp404, match='error_404.html'):
-            response = client.get('/httperrors/views/error_404_page')
+        # Verifique se o template correto foi usado
+        assert 'error_404.html' in [template.name for template in response.templates]
+
 
     def test_http_status_code_500(self):
         try:
