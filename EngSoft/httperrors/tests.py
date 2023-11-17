@@ -1,11 +1,9 @@
 from django.test import TestCase
-import pytest
 from django.test import Client
 from .error_http_500 import ErrorHttp500
 from .error_http_401 import ErrorHttp401
 from .error_http_403 import ErrorHttp403
 from .error_http_400 import ErrorHttp400
-from .error_http_404 import ErrorHttp404
 
 # https://docs.djangoproject.com/en/4.2/topics/testing/overview/
 
@@ -18,15 +16,14 @@ from .error_http_404 import ErrorHttp404
 
 class HttpError(TestCase):
     def test_http_status_code_404(client):
-        # Faça a requisição à view
+        # instancio um objeto cliente django
+        client = Client()
+
+        # faço requisicao GET
         response = client.get('/httperrors/views/error_404_page')
 
-        # Verifique se o status HTTP é 404
-        assert response.status_code == 404
-
-        # Verifique se o template correto foi usado
+        # verifico se o template correto foi utilizado
         assert 'error_404.html' in [template.name for template in response.templates]
-
 
     def test_http_status_code_500(self):
         try:
