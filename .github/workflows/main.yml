@@ -3,14 +3,14 @@ name: Deploy
 on:
   push:
     branches:
-      - deploy # alterado para deploy para teste, mas devera ser develop ate que o produto entre em release
+      - develop # devera ser develop ate que o produto entre em release
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2 # permite acessar os diretorios do repositorio
-      - uses: akhileshns/heroku-deploy@v3.12.14 # essa e a action
+      - uses: akhileshns/heroku-deploy@v3.12.14 # essa eh a action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "petscan-ressurections" # deve ser unico no Heroku
