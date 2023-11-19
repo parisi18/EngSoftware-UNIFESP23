@@ -1,0 +1,332 @@
+/*For more straightforward sizing in CSS, we switch the global box-sizing value 
+from content-box to border-box. This ensures padding does not affect the final 
+computed width of an element, but it can cause problems with some third-party 
+software like Google Maps and Google Custom Search Engine.
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+*/
+
+/* Tentar evitar o vazamento de grafismos
+body {
+    overflow-x: hidden;
+} */
+
+.main-section-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/*Limpo todas as estilizações padrão de links*/
+a {
+    text-decoration: none;
+    color: var(--bs-body-color);
+}
+
+/*Define a configuracao externa da navbar*/
+.nav-self-config {
+    height: 90px;
+    background-color: transparent !important;
+}
+
+/*Mantém tamanhos de tela menores sem padding para evitar quebra de layout*/
+@media(min-width:992px) {
+    .nav-self-config {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+/*Da o efeito laranja no canto superior da tela*/
+.orange-elipse {
+    /* Ellipse 23 */
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -356px;
+    top: -223px;
+    /* Orange */
+    background: #FF5722;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+/*Cor branca no fundo do menu de itens*/
+.menu-self-config {
+    background-color: white;
+}
+
+/*Espacamento entre itens do menu e sobreposicao dos clicaveis ao grafismo laranja*/
+.menu-self-config li {
+    margin-left: 40px;
+    z-index: 1;
+}
+
+/*Sobreposicao do icone clicaveL ao grafismo laranja*/
+.navbar-brand-self-config {
+    z-index: 1;
+}
+
+.navbar-toggler-self-config {
+    z-index: 1;
+}
+
+/*Define esitlo padrao de botoes no geral*/
+button {
+    font-weight: 400;
+    line-height: 120%;
+}
+
+button.button-shadow {
+    box-shadow: 2px 25px 4px rgba(0, 0, 0, 0.08);
+    /* Deslocamento horizontal, deslocamento vertical, desfoque e cor da sombra */
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 100px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+/*Define estilo de botoes brancos*/
+button.white-button {
+    color: #5D50C6;
+    background-color: white;
+    border-radius: 100px;
+    border: 0.1px #EEEEEE solid;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+/*Define a dimensão de botões pequenos*/
+button.tiny {
+    font-size: 14px;
+    width: 100px;
+    height: 49px;
+}
+
+/*Define tamanho de botões médios*/
+button.medium {
+    width: 150px;
+    height: 49px;
+}
+
+/*Define tamanho de botões grandes*/
+button.big {
+    width: 500px;
+    height: 49px;
+}
+
+/*Alteração de cor "Inscreva-se na nossa newsletter"*/
+.pink-title {
+    /* Inscreva-se na nossa newsletter */
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    /* Secondary */
+    color: #F85E9F;
+}
+
+/*Formatacao para textos de leitura curta/media*/
+.read-text {
+    /* Body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    /* Grey Scale/Black 50 */
+    color: rgba(25, 24, 37, 0.5);
+}
+
+/* Alinho o objeto a direita da tag pai*/
+.align-at-right {
+    position: absolute;
+    right: 0;
+}
+
+/* Alinho o objeto a esquerda da tag pai*/
+.align-at-left {
+    position: absolute;
+    left: 0;
+}
+
+.hide-desktop-element {
+    display: none;
+}
+
+.hide-mobile-element {
+    display: block;
+}
+
+.help-section-title {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+}
+
+.pink-price-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+
+    /* Secundária */
+    color: #F85E9F;
+}
+
+#main-section {
+    height: 500px;
+}
+
+.main-section-purple-button-cttus {
+    border-radius: 100px;
+    height: 45px;
+    width: 200px;
+    margin-right: 15px;
+    background-color: #5D50C6;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.help-item {
+    display: flex;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.help-icone-item-orange-color {
+    background-color: #FF5722;
+}
+
+.help-icone-item-yellow-color {
+    background-color: #FACD49;
+}
+
+.help-item-border {
+    border: 1px solid rgba(201, 201, 201, 1);
+    border-radius: 15px;
+}
+
+.gps-icon {
+    width: 50px;
+    height: 50px;
+    right: 0;
+    background-image: url('../img/gps.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 25px;
+    border-radius: 15px;
+}
+
+.calendar-icon {
+    width: 50px;
+    height: 50px;
+    right: 0;
+    background-image: url('../img/calendar.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 25px;
+    border-radius: 15px;
+}
+
+.ticket-icon {
+    width: 50px;
+    height: 50px;
+    right: 0;
+    background-image: url('../img/ticket.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 18px;
+    border-radius: 15px;
+}
+
+.help-text-item {
+    width: 80%;
+}
+
+.help-img-item {
+    width: 15%;
+}
+
+input {
+    border-radius: 6px;
+    border: 1px solid rgba(201, 201, 201, 1);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.last-input {
+    height: 300px;
+    margin-bottom:20px;
+    border: 1px solid rgba(201, 201, 201, 1);
+    border-radius: 6px;
+    padding-left: 10px;
+}
+
+#help-dropdown {
+    margin-bottom: 10px;
+}
+
+option {
+    background-color: white;
+}
+
+#open-call {
+    margin-bottom: 100px;
+}
+
+@media(max-width:768px) {
+    .reduce-mobile-text span {
+        font-size: 12px !important;
+    }
+
+    /*Deita o rodapé*/
+    .mobile-make-column {
+        flex-direction: column;
+    }
+
+    .mobile-make-column div {
+        margin-bottom: 20px;
+    }
+
+    .news-middle-col input {
+        width: 100%;
+    }
+
+    .news-middle-col button {
+        width: 100%;
+    }
+
+    .hide-desktop-element {
+        display: block;
+    }
+
+    .hide-mobile-element {
+        display: none;
+    }
+
+    .help-section-title {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:991px) {
+    .help-text-item {
+        margin-left: 15px;
+    }
+}

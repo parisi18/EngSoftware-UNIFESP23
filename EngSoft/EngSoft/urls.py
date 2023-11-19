@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from httperrors import views
 
+# rotas de status http 200
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('animais/', include('imageupload.urls'), name='animals'),
@@ -30,6 +32,13 @@ urlpatterns = [
     path('prediction/', include('prediction.urls')),
     path('register/', include('userRegister.urls')),
 ]
+
+# rotas de status de erro http
+handler401 = views.error_401_page
+handler400 = views.error_400_page
+handler403 = views.error_403_page
+handler404 = views.error_404_page
+handler500 = views.error_500_page
 
 # essa configuracao permite o django servir imagens de mídia durante o desenvolvimento
 if settings.DEBUG:

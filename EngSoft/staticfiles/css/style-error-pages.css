@@ -1,0 +1,104 @@
+/*Corpo de textos. No figma seria a tipografia body*/
+body p {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+    color: rgba(25, 24, 37, 1);
+}
+
+.gradient {
+    color: white;
+    background: linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
+}
+
+header {
+    height: 10px;
+    background: linear-gradient(90deg, rgba(248,94,159,1) 0%, rgba(93,80,198,1) 70%);
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+}
+
+/*Define estilo de botoes roxos*/
+button.purple-button {
+    color: white;
+    background-color: #5D50C6;
+    border-radius: 10px;
+    border: none;
+    transition: border-color 0.3s, background-color 0.3s;
+    /* Adiciona uma transição suave para a cor da borda */
+}
+
+button.purple-button:hover {
+    background-color: #7d70e6;
+    color: white;
+}
+
+.reload-button {
+    background-image: url('../img/reload.png');
+    background-size: 20px 20px;
+    background-position: 160px 15px;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 49px;
+}
+
+.login-button {
+    width: 200px;
+    height: 49px;
+}
+
+/*Da o efeito laranja no canto superior da tela*/
+.orange-elipse {
+    /* Ellipse 23 */
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    left: -356px;
+    top: -223px;
+    /* Orange */
+    background: #FF5722;
+    opacity: 0.5;
+    filter: blur(250px);
+}
+
+@media(max-width:709px) {
+    footer {
+        flex-direction: column;
+        height: 130px;
+        justify-content: space-around;
+    }
+
+    img {
+        width: 300px !important;
+        height: 150px !important;
+    }
+
+    .main-section p {
+        font-size: 12px;
+    }
+
+    .footer-text {
+        margin-bottom: 15px;
+    }
+}
