@@ -21,8 +21,5 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 # coleta arquivos estáticos
 RUN python EngSoft/manage.py collectstatic --noinput
 
-# já dou release na imagem
-RUN heroku container:release web -a petscan-ressurections
-
 # Run the application
 CMD gunicorn --pythonpath EngSoft EngSoft.wsgi:application --bind 0.0.0.0:${PORT##\\}
