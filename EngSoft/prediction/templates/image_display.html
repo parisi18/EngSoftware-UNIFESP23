@@ -297,6 +297,28 @@
                         
                         </div>
                     </div>
+                    <div class="row">
+                        <style>
+                            #submission-history {
+                                margin-top: 20px;
+                            }
+
+                            #history-list {
+                                list-style: none;
+                                padding: 0;
+                            }
+
+                            #history-list li {
+                                margin-bottom: 8px;
+                            }
+                        </style>
+
+                        <div id="submission-history">
+                            <h4>Histórico de Submissões:</h4>
+                            <ul id="history-list"></ul>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         </div>
@@ -379,6 +401,17 @@
 
     <script>
         
+        function addToHistory(imageName, result) {
+            var historyContainer = document.getElementById('history-list');
+
+            // Cria um novo item de histórico
+            var historyItem = document.createElement('li');
+            historyItem.textContent = `Imagem: ${imageName}, Resultado: ${result}`;
+
+            // Adiciona o item de histórico ao contêiner
+            historyContainer.appendChild(historyItem);
+        }
+        
         var uploadedImage = document.getElementById('uploaded-image');
         
         var noImage = document.getElementById('no-image');
@@ -405,21 +438,23 @@
         });
     
         // Aciona a predicao ao clicar
-        predictButton.addEventListener('click', function() {
+        predictButton.addEventListener('click', function () {
             var form = document.getElementById('image-upload-form');
             var formData = new FormData(form);
-    
+
             fetch('{% url "predicao" %}', {
                 method: 'POST',
                 body: formData,
             })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('result-text').textContent = data;
-            })
-            .catch(error => {
-                console.error('Prediction failed:', error);
-            });
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result-text').textContent = data;
+                    var imageName = fileInput.files[0].name; // Obtém o nome da imagem
+                    addToHistory(imageName, data); // Adiciona ao histórico
+                })
+                .catch(error => {
+                    console.error('Prediction failed:', error);
+                });
         });
 
         document.getElementById('predict-button').addEventListener('click', function() {
