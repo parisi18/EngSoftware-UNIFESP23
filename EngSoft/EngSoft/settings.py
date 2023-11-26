@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.facebook",
     "imageupload",
     "home",
     "aboutus",
@@ -48,7 +54,8 @@ INSTALLED_APPS = [
     "httperrors",
     "userRegister",
     "crispy_forms",
-    "crispy_bootstrap4"
+    "crispy_bootstrap4",
+    "socialLogin"
 ]
 
 # Para a criacao da form
@@ -63,6 +70,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "EngSoft.urls"
@@ -155,3 +163,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MAILCHIMP_API_KEY = os.environ.get('MP_API_KEY', '587422fdfb8064848586bb3493f1eb1b-us21')
 MAILCHIMP_DATA_CENTER = os.environ.get('MP_DATA_CENTER', 'us21')
 MAILCHIMP_LIST_ID = os.environ.get('MP_LIST_ID', '8d31bf3aee')
+
+
+SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
