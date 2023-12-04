@@ -145,7 +145,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_URL = 'media/'
 
 # Define a url para imagens que forem upadas via browser (em producao)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = '/app/Engsoft/media/'
 
 # >>>>>>> Mailchimp credentials <<<<<<<<
 
