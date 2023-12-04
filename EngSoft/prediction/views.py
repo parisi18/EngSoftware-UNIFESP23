@@ -49,7 +49,7 @@ def predicao(request):
         uploaded_image_name = uploaded_image.name
 
         # diretorio de upload quando em desenvolvimento
-        if DEBUG is 1:
+        if DEBUG:
             destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}'
         else:
         # diretorio de upload quando em producao
