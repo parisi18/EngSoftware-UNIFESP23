@@ -52,7 +52,7 @@ def predicao(request):
         if DEBUG:
             destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}'
         else:
-        # diretorio de upload quando em producao
+            # diretorio de upload quando em producao
             destination_folder = f'{BASE_DIR}/media/prediction/images/{uploaded_image_name}'
 
         # Salva a imagem carregada em um local temporario
@@ -61,7 +61,7 @@ def predicao(request):
 
         # Correcao na string para que ela contemple a base app/Engsoft/media
         image_path = f'{BASE_DIR}/media/{image_path}'
-        
+
         # Inicializa a predicao
         label_and_score = initPrediction(image_path)
         return JsonResponse({'result': label_and_score})
