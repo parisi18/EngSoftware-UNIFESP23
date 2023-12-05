@@ -59,6 +59,9 @@ def predicao(request):
         fs = FileSystemStorage()
         image_path = fs.save(destination_folder, uploaded_image)
 
+        # Correcao na string para que ela contemple a base app/Engsoft/media
+        image_path = f'{BASE_DIR}/media/{image_path}'
+        
         # Inicializa a predicao
         label_and_score = initPrediction(image_path)
         return JsonResponse({'result': label_and_score})
