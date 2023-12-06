@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CardForm
-from .models import AnimalCard, AnimalImage
+from .models import AnimalCard
 from django.core.paginator import Paginator  # lida com paginacao no template
 # operador que lida com consultas complexas em vários campos do modelo
 from django.db.models import Q
@@ -52,14 +52,6 @@ def process_forms(request):
         form = CardForm(request.POST, request.FILES)
         if form.is_valid():
             card = form.save(commit=False)
-            card.save()
-
-            # Processar imagens enviadas e associá-las ao cartão
-            for image_file in request.FILES.getlist('animal_images'):
-                animal_image = AnimalImage(image=image_file)
-                animal_image.save()
-                card.animal_images.add(animal_image)
-
             card.save()
         else:
             print(form.errors)
