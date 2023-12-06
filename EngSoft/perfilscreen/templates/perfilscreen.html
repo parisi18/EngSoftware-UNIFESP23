@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'perfilscreen/css/styleguide.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'perfilscreen/css/globals.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'perfilscreen/css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="{% static 'css/style-animalcard.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
+    <title>Meu Perfil</title>
+</head>
+  
+  <body>
+    <div class="perfil">
+      <div class="div">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary nav-self-config">
+            <div class="container justify-content-between">
+                <a class="navbar-brand navbar-brand-self-config" href="{% url 'home' %}">
+                    <img src="{% static 'img/ubuntu.png' %}" alt="Pinguim" width="30" height="30">
+                </a>
+                <div class="menu-buttons">
+                    <button type="button" class="tiny purple-button logged-user-button" onclick="window.location.href='#'">
+                        <img class="user-avatar" src="{% static 'perfilscreen/img/rectangle-9.png' %}" alt="User Avatar">
+                        Joao
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="overlap">
+          <div class="group-3">
+            <div class="meu-perfil">Meu Perfil</div>
+            <div class="overlap-2">
+              <div class="nome-de-usu-rio">Nome De Usuário</div>
+              <div class="text-wrapper-6">Joao Victor</div>
+              <div class="rectangle-2"></div>
+            </div>
+            <div class="overlap-3">
+              <div class="email-cadastrado">Email Cadastrado</div>
+              <div class="text-wrapper-6">jvmsa@unifesp.br</div>
+              <div class="rectangle-2"></div>
+            </div>
+            <div class="nome-da-clinica">Nome Da Clinica</div>
+            <div class="overlap-4">
+              <div class="rectangle-3"></div>
+              <img class="group-4" src="{% static 'perfilscreen/img/group-61.png' %}" />
+              <div class="rectangle-4"></div>
+              <img class="group-5" src="{% static 'perfilscreen/img/group-62.png' %}" />
+            </div>
+            <img class="group-6" src="{% static 'perfilscreen/img/group-66.png' %}" />
+          </div>
+          <div class="text-wrapper-7">UNIFESP</div>
+          <div class="rectangle-5"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container mt-5">
+        <div class="row align-items-start mobile-make-column mt-5 mb-5">
+            <div class="col">
+                <a href="{% url 'home' %}"><img src="{% static 'img/ubuntu.png' %}" alt="Pinguim" width="30" height="30"></a>
+                <p style="color: rgba(25, 24, 37, 0.5);">Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It
+                    has roots
+                    in a piece of classical Latin literature from 45 BC.</p>
+                <div class="row">
+                    <div class="col-2">
+                        <a href="#"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 0C7.1808 0 0 7.1808 0 16C0 24.8192 7.1808 32 16 32C24.8192 32 32 24.8256 32 16C32 7.1744 24.8256 0 16 0ZM20.4352 9.4912C20.4352 9.6256 20.3264 9.7344 20.192 9.7344H18.2656C17.792 9.7344 17.408 10.1184 17.408 10.592V12.608H20.1472C20.1536 12.608 20.16 12.608 20.1664 12.608C20.3008 12.6208 20.3968 12.736 20.384 12.8704L20.1408 15.712C20.128 15.84 20.0256 15.936 19.8976 15.936H17.4016V25.3632C17.4016 25.4976 17.2928 25.6064 17.1584 25.6064H13.7152C13.5808 25.6064 13.472 25.4976 13.472 25.3632V16.0768V15.9232H11.7504C11.616 15.9232 11.5072 15.8144 11.5072 15.68V12.8384C11.5072 12.704 11.616 12.5952 11.7504 12.5952H13.472V9.856C13.472 7.9488 15.0208 6.4 16.928 6.4H20.1792C20.3136 6.4 20.4224 6.5088 20.4224 6.6432V9.4912H20.4352Z"
+                                    fill="#5D50C6" />
+                            </svg></a>
+                    </div>
+                    <div class="col-2">
+                        <a href="#">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
+                                    fill="#5D50C6" />
+                                <path
+                                    d="M25.8003 11.4988C25.1146 11.8028 24.377 12.0084 23.6035 12.1003C24.3933 11.6271 24.9994 10.8784 25.2855 9.98483C24.5465 10.4232 23.7276 10.7412 22.8568 10.9126C22.1592 10.1697 21.1652 9.70532 20.0646 9.70532C17.9529 9.70532 16.2401 11.418 16.2401 13.5298C16.2401 13.8295 16.2741 14.1213 16.3397 14.4014C13.1612 14.242 10.343 12.7195 8.45662 10.405C8.12749 10.9697 7.93867 11.6271 7.93867 12.3279C7.93867 13.6544 8.61435 14.8255 9.63998 15.5112C9.01336 15.4915 8.42325 15.3195 7.90787 15.0323C7.90758 15.0485 7.90758 15.0648 7.90758 15.0808C7.90758 16.9338 9.22642 18.4794 10.9756 18.8305C10.6551 18.9183 10.3165 18.9648 9.96826 18.9648C9.72127 18.9648 9.48197 18.9412 9.24867 18.8967C9.73524 20.4157 11.1473 21.5215 12.8213 21.5526C11.5121 22.5785 9.8633 23.1897 8.07101 23.1897C7.76298 23.1897 7.4578 23.1718 7.15918 23.1361C8.85079 24.2216 10.8616 24.8545 13.0212 24.8545C20.0558 24.8545 23.9027 19.027 23.9027 13.9727C23.9027 13.807 23.899 13.6419 23.8916 13.4781C24.6394 12.9391 25.2877 12.2657 25.8003 11.4988Z"
+                                    fill="#F1F2F2" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-2">
+                        <a href="#">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z"
+                                    fill="#5D50C6" />
+                                <path
+                                    d="M20.8002 8.19995H11.2002C9.53352 8.19995 8.2002 9.53328 8.2002 11.2V20.8C8.2002 22.4666 9.53352 23.8 11.2002 23.8H20.8002C22.4669 23.8 23.8002 22.4666 23.8002 20.8V11.1999C23.8002 9.53328 22.4669 8.19995 20.8002 8.19995ZM21.6669 9.99995H22.0002V12.6666H19.3335V9.99995H21.6669ZM13.8002 14.4C14.2669 13.7333 15.1335 13.2666 16.0002 13.2666C16.8669 13.2666 17.7336 13.7333 18.2002 14.4C18.5335 14.8666 18.7335 15.4 18.7335 16C18.7335 17.5333 17.4669 18.7333 16.0002 18.7333C14.5335 18.7333 13.2669 17.5333 13.2669 16C13.2669 15.4 13.4669 14.8666 13.8002 14.4ZM22.2669 20.8C22.2669 21.6 21.6002 22.2666 20.8002 22.2666H11.2002C10.4002 22.2666 9.73353 21.6 9.73353 20.8V14.4H12.0669C11.8669 14.8666 11.7335 15.4666 11.7335 16C11.7335 18.3333 13.6669 20.2666 16.0002 20.2666C18.3335 20.2666 20.2669 18.3333 20.2669 16C20.2669 15.4666 20.1335 14.8666 19.9335 14.4H22.2669L22.2669 20.8Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-8 mobile-make-column">
+                <div class="col">
+                    <h6 class="reduce-mobile-text">PetScan</h6>
+                    <a href="{% url 'home' %}">
+                        <p>Home</p>
+                    </a>
+                    <p>Planos</p>
+                    <a href="{% url 'aboutus' %}">
+                        <p>Sobre Nós</p>
+                    </a>
+                </div>
+                <div class="col">
+                    <h6 class="reduce-mobile-text">Contato</h6>
+                    <a href="{% url 'contactus' %}">
+                        <p>Fale Conosco</p>
+                      </a>
+                </div>
+                <div class="col">
+                    <h6 class="reduce-mobile-text">Encontre-nos</h6>
+                    <p>+00 92 1234 56789</p>
+                    <a href="mailto:press@petscan.com">press@petscan.com</a>
+                    <p>205. R Street, New York</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+  </body>
+</html>
