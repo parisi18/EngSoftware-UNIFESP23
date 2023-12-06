@@ -6,10 +6,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.core.files.storage import FileSystemStorage
 from .utils import initPrediction
-from EngSoft.settings import BASE_DIR, DEBUG
+from EngSoft.settings import BASE_DIR
+from imageupload.models import AnimalCard
 
-def image_view(request):
-
+def image_view(request, animal_id):
     # A imagem carregada pela interface
     image = ModelImage.objects.filter(name='example').first()
 
@@ -20,7 +20,12 @@ def image_view(request):
     if image:
         resultado_predicao = predicao(request)
 
-    context = {'image': image, 'res_pred': resultado_predicao}
+    # Carrega o objeto da ficha do animal
+    animal = AnimalCard.objects.get(animal_id=animal_id)
+
+    context = {'image': image, 'res_pred': resultado_predicao,
+               'animal_name': animal.animal_name, 'owner_name': animal.owner_name, 
+               'owner_address':animal.owner_address}
 
     return render(request, 'image_display.html', context)
 
@@ -48,12 +53,8 @@ def predicao(request):
         uploaded_image = request.FILES['image']
         uploaded_image_name = uploaded_image.name
 
-        # diretorio de upload quando em desenvolvimento
-        if DEBUG:
-            destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}'
-        else:
-            # diretorio de upload quando em producao
-            destination_folder = f'{BASE_DIR}/media/prediction/images/{uploaded_image_name}'
+        # diretorio de upload quando em desenvolvimento ou producao
+        destination_folder = f'{BASE_DIR}/media/prediction/images/{uploaded_image_name}'
 
         # Salva a imagem carregada em um local temporario
         fs = FileSystemStorage()

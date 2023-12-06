@@ -33,14 +33,3 @@ postPopupForm.querySelector('form').addEventListener('submit', closePopup);
 const closePopupVec = document.getElementsByClassName('close-popup-button');
 closePopupVec[0].addEventListener('click', closePopup);
 closePopupVec[1].addEventListener('click', closePopup);
-
-// Funcao que lida com a delegação correta de animal_id para o formulário de atualização de infos do card
-for (const button of getShowFormButton) {
-    button.addEventListener('click', () => {
-        const animalID = button.getAttribute('data-animal-id');
-        const editForm = document.getElementById('edit-form');
-        const editAction = 'editcard/' + animalID + '/';
-        editForm.action = editAction; // Passo dinamicamente a rota edit_url com uuid:animal_id
-        getPopupForm.showModal();
-    });
-};
