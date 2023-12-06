@@ -11,6 +11,8 @@ def initPrediction(img_path):
 
     img_height = 180
     img_width = 180
+
+    print(img_path)
     
     img = keras.preprocessing.image.load_img(
         img_path, target_size=(img_height, img_width)

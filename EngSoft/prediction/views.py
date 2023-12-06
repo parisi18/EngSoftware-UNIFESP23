@@ -6,10 +6,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.core.files.storage import FileSystemStorage
 from .utils import initPrediction
-from EngSoft.settings import BASE_DIR
+from EngSoft.settings import BASE_DIR, DEBUG
 
 def image_view(request):
-    
+
     # A imagem carregada pela interface
     image = ModelImage.objects.filter(name='example').first()
 
@@ -48,12 +48,20 @@ def predicao(request):
         uploaded_image = request.FILES['image']
         uploaded_image_name = uploaded_image.name
 
-        destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}' 
-        
+        # diretorio de upload quando em desenvolvimento
+        if DEBUG:
+            destination_folder = f'{BASE_DIR}/prediction/images/{uploaded_image_name}'
+        else:
+            # diretorio de upload quando em producao
+            destination_folder = f'{BASE_DIR}/media/prediction/images/{uploaded_image_name}'
+
         # Salva a imagem carregada em um local temporario
         fs = FileSystemStorage()
         image_path = fs.save(destination_folder, uploaded_image)
-        
+
+        # Correcao na string para que ela contemple a base app/Engsoft/media
+        image_path = f'{BASE_DIR}/media/{image_path}'
+
         # Inicializa a predicao
         label_and_score = initPrediction(image_path)
         return JsonResponse({'result': label_and_score})
