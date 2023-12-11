@@ -31,6 +31,7 @@ urlpatterns = [
     path('fale-conosco/', include('contactus.urls'), name='contactus'),
     path('prediction/', include('prediction.urls')),
     path('register/', include('userRegister.urls')),
+    path('perfil/', include('perfilscreen.urls')),
     path('accounts/', include('allauth.urls')),
     path('login/', include('socialLogin.urls')),
 ]

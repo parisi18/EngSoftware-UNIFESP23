@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     "userRegister",
     "crispy_forms",
     "crispy_bootstrap4",
+    "perfilscreen",
     "socialLogin"
 ]
 
