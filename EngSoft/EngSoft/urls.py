@@ -32,6 +32,7 @@ urlpatterns = [
     path('prediction/', include('prediction.urls')),
     path('register/', include('userRegister.urls')),
     path('perfil/', include('perfilscreen.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
 
 # rotas de status de erro http

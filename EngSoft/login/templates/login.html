@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,8 +27,10 @@
                 <div class="text-center">
                     <h4 class="mb-4">Fazer login em uma conta PetScan</h4>
                     <div class="w-100 mb-4">
-                        <button class="google-account-button">Entrar com Google</button>
-                        <button class="facebook-account-button">Entrar com Facebook</button>
+                        <button class="google-account-button"><a 
+                            href="{% provider_login_url "google" %}" class="black-text">Entrar com Google</a></button>
+                        <button class="facebook-account-button"><a 
+                            href="{% provider_login_url "facebook" method="js_sdk" %}" class="black-text">Entrar com Facebook</a></button>
                     </div>
                     <p class="read-text ou-text">- OU -</p>
                 </div>
