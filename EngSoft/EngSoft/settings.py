@@ -52,12 +52,12 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     "perfilscreen",
 
-    #allauth
+    # allauth
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
 
-    #provider
+    # provider
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.facebook",
 
