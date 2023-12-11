@@ -38,11 +38,19 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
+
+    # allauth
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+
+    # providers for allauth
     "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.facebook",
+
+    # social login app
+    "socialLogin",
+    
     "imageupload",
     "home",
     "aboutus",
@@ -55,8 +63,7 @@ INSTALLED_APPS = [
     "userRegister",
     "crispy_forms",
     "crispy_bootstrap4",
-    "perfilscreen",
-    "socialLogin"
+    "perfilscreen"
 ]
 
 # Para a criacao da form
